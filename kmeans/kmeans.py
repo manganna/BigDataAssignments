@@ -2,6 +2,8 @@ import sys
 import math
 import random
 from functools import reduce
+import pandas as pd
+df = pd.read_csv('try.csv')
 """
 Point clustering using Python [http://moderndata.plot.ly/point-clustering-in-python/]
 
@@ -108,7 +110,7 @@ def main():
         sys.exit(1)
     
     # points in the dataset
-    num_points = 10000
+    num_points = 100000
     
     # dimensions for each point
     dimensions = 2
@@ -122,10 +124,17 @@ def main():
     
     # when optimization has 'converged'
     opt_cutoff = 0.5
-    
-    # generate some points
-    points = [makeRandomPoint(dimensions, lower, upper) for i in range(num_points)]
-    
+    lat = []
+    lon = []
+    points =[]
+    for i in range(df.shape[0]):
+        lat.append(df.values[i][1])
+        lon.append(df.values[i][2])
+    pointsds = []
+    for i in range(len(lat)):
+        pointsds.append([lat[i],lon[i]])
+    for i in pointsds:
+        points.append(Point(i))    
     # cluster those data points
     clusters, iterations = kmeans(points, num_clusters, opt_cutoff)
 
