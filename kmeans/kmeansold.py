@@ -1,154 +1,42 @@
-import sys
-import math
-import random
-from functools import reduce
-import pandas as pd
-df = pd.read_csv('try.csv')
-"""
-Point clustering using Python [http://moderndata.plot.ly/point-clustering-in-python/]
-
-This is an improved version of the KMeans Clustering Algorithmn
-Which was originally implemented by 'Ian Danforth'.
-[Reference: https://gist.github.com/iandanforth/5862470]
-
-
-To properly use the Plotly integration:
-
-1. Get a user credentials from "https://plot.ly/settings/api"
-2. Install Plotly: [sudo] pip install plotly
-
-"""
-
-PLOTLY_USERNAME = 'mr-karan'
-PLOTLY_KEY = 'tzubazm2ba'
-
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-# Sign in to plotly
-py.sign_in('mr-karan', 'tzubazm2ba') # Replace the username, and API key with your credentials.
-
-# a list containing points in each cluster per iteration
-iteration_points = []
-
-# a list containing the centroids in each cluster per iteration
-iteration_centroids = []
-
-# colors for all the clusters
-colors = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
-
-# layout property for plots
-layout = go.Layout(
-    showlegend = False
-)
-
-
-def export_cluters(iterations, num_clusters):
-    '''
-    Save plot image on local system using Plotly's static image export feature
-
-    Plot the final clusters and respective centroids using Plotly API
-    '''
-
-    # generate image for each iteration
-    for i in range(iterations):
-        # points data per iteration
-        plot_data = []
-
-        for j in range(num_clusters):
-            # trace object for cluster points
-            trace = go.Scatter(
-                x = iteration_points[i][j][0],
-                y = iteration_points[i][j][1],
-                mode='markers',
-                marker = dict(
-                    size = 5,
-                    color = colors[j]
-                )
-            )
-            plot_data.append(trace)
-
-            # trace object for cluster centroids
-            trace = go.Scatter(
-                x = [iteration_centroids[i][j][0]],
-                y = [iteration_centroids[i][j][1]],
-                marker = dict(
-                    size = 15,
-                    color = colors[j],
-                )
-            )
-            plot_data.append(trace)
-
-        # export static image
-        fig = go.Figure(data=plot_data, layout=layout)
-        fig['layout'].update(title='Iteration #%d' % (i + 1))
-        py.image.save_as(fig, filename='kmeans-iteration-%d.png' % (i + 1))
-
-        # plot the clusters
-        if (len(sys.argv) == 2 and sys.argv[1] == '--allow-multiple'):
-            cluster_i_url = py.plot(fig, filename='kmeans-iteration-%d' % (i + 1))
-            print ('cluster %d' % (i + 1), cluster_i_url)
-
-    # normal execution
-    if (len(sys.argv) == 1):
-        final_cluster_url = py.plot(fig, filename='kmeans-iteration-%d' % (i + 1))
-        print ('final plot', final_cluster_url)
-
-
 def main():
     
-    if (PLOTLY_USERNAME == 'Enter Your Plotly Username'):
-        print ('Please Enter Your Plotly Username, Line #20')
-        sys.exit(1)
-
-    if (PLOTLY_KEY == 'Enter Your Plotly API Key'):
-        print ('Please Enter Your Plotly API Key, Line #21')
-        sys.exit(1)
-        
-    if (len(sys.argv) == 2 and sys.argv[1] != '--allow-multiple' or len(sys.argv) > 2):
-        print ('Usage: python clustering.py --allow-multiple')
-        sys.exit(1)
+    # How many points are in our dataset?
+    num_points = 434874
     
-    # points in the dataset
-    num_points = 100000
-    
-    # dimensions for each point
+    # For each of those points how many dimensions do they have?
     dimensions = 2
     
-    # range for the values of the points
-    lower = -100
-    upper = 100
+    # The K in k-means. How many clusters do we assume exist?
+    num_clusters = 4
     
-    # number of clusters (K)
-    num_clusters = 3
-    
-    # when optimization has 'converged'
+    # When do we say the optimization has 'converged' and stop updating clusters
     opt_cutoff = 0.5
     lat = []
-    lon = []
+    long = []
     points =[]
     for i in range(df.shape[0]):
         lat.append(df.values[i][1])
-        lon.append(df.values[i][2])
+        long.append(df.values[i][2])
     pointsds = []
     for i in range(len(lat)):
-        pointsds.append([lat[i],lon[i]])
+        pointsds.append([float(lat[i]),float(long[i])])
     for i in pointsds:
         points.append(Point(i))
 
-    
-    # cluster those data points
-    clusters, iterations = kmeans(points, num_clusters, opt_cutoff)
+    # Cluster those data!
+    clusters = kmeans(points, num_clusters, opt_cutoff)
 
-    # print our final clusters
-    print ('Final clusters and points:')
+    # Print our clusters
+    '''
     for i,c in enumerate(clusters):
         for p in c.points:
             print (" Cluster: ", i, "\t Point :", p)
-
-    # display final clusters plot and export static images
+    '''
+    # Display clusters using plotly for 2d data
+    # This uses the 'open' command on a URL and may only work on OSX.
     if dimensions == 2 and PLOTLY_USERNAME:
-        export_cluters(iterations, num_clusters)
+        print ("Plotting points, launching browser ...")
+        plotClusters(clusters)
 
 class Point:
     '''
@@ -234,10 +122,9 @@ def kmeans(points, k, cutoff):
         # Create a list of lists to hold the points in each cluster
         lists = [ [] for c in clusters]
         clusterCount = len(clusters)
-
+        
         # Start counting loops
         loopCounter += 1
-
         # For every point in the dataset ...
         for p in points:
             # Get the distance between that point and the centroid of the first
@@ -262,44 +149,19 @@ def kmeans(points, k, cutoff):
         
         # Set our biggest_shift to zero for this iteration
         biggest_shift = 0.0
-
-        # store the iteration's cluster points and respective centroids
-        # the first iteration will only have centroids in the cluster
-        if loopCounter >= 2:
-            global iteration_points
-            global iteration_centroids
-
-            iter_point_data = []
-            iter_centroid_data = []
-
-            for j in range(k):
-                x, y = [], []
-
-                for p in clusters[j].points:
-                    x.append(p.coords[0])
-                    y.append(p.coords[1])
-
-                c = clusters[j].calculateCentroid()
-
-                iter_point_data.append([x, y])
-                iter_centroid_data.append([c.coords[0], c.coords[1]])
-
-            iteration_points.append(iter_point_data)
-            iteration_centroids.append(iter_centroid_data)
-
+        
         # As many times as there are clusters ...
         for i in range(clusterCount):
             # Calculate how far the centroid moved in this iteration
             shift = clusters[i].update(lists[i])
             # Keep track of the largest move from all cluster centroid updates
             biggest_shift = max(biggest_shift, shift)
-
+        
         # If the centroids have stopped moving much, say we're done!
         if biggest_shift < cutoff:
-            print ("Converged after %d iterations" % (loopCounter-1))
+            print ("Converged after %s iterations" % loopCounter)
             break
-
-    return clusters, loopCounter-1
+    return clusters
 
 def getDistance(a, b):
     '''
@@ -311,6 +173,54 @@ def getDistance(a, b):
     
     ret = reduce(lambda x,y: x + pow((a.coords[y]-b.coords[y]), 2),range(a.n),0.0)
     return math.sqrt(ret)
+
+def plotClusters(data):
+
+    '''
+    Use the plotly API to plot data from clusters.
+
+    Gets a plot URL from plotly and then uses subprocess to 'open' that URL
+    from the command line. This should open your default web browser.
+    '''
+
+    # List of symbols each cluster will be displayed using    
+    symbols = ['circle', 'cross', 'triangle-up', 'square']
+
+    # Convert data into plotly format.
+    traceList = []
+    for i, c in enumerate(data):
+        data = []
+        for p in c.points:
+            data.append(p.coords)
+        # Data
+        trace = {}
+        trace['x'], trace['y'] = zip(*data)
+        trace['marker'] = {}
+        trace['marker']['symbol'] = symbols[i]
+        trace['name'] = "Cluster " + str(i)
+        traceList.append(trace)
+        # Centroid (A trace of length 1)
+        centroid = {}
+        centroid['x'] = [c.centroid.coords[0]]
+        centroid['y'] = [c.centroid.coords[1]]
+        centroid['marker'] = {}
+        centroid['marker']['symbol'] = symbols[i]
+        centroid['marker']['color'] = 'rgb(200,10,10)'
+        centroid['name'] = "Centroid " + str(i)
+        traceList.append(centroid)
+
+    # Log in to plotly
+    #py = plotly.(username=PLOTLY_USERNAME, key=PLOTLY_KEY)
+
+    # Style the chart
+    layout = dict(title = 'Plot',
+              xaxis = dict(title = 'X axis'),
+              yaxis = dict(title = 'Y axis'),
+        plot_bgcolor='lightblue',
+              )
+
+    fig = dict(data=traceList, layout=layout)
+    iplot(fig)
 
 if __name__ == "__main__": 
     main()
