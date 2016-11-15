@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--XBRL Document Created with Wdesk from Workiva, formerly WebFilings-->
+<!-- -->
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.amazon.com/20141231" xmlns:amzn="http://www.amazon.com/20141231" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://fasb.org/us-gaap/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-gaap-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-roles/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-roles-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-types/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-types-2014-01-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/arcrole/fact-explanatoryFact" schemaLocation="http://www.xbrl.org/lrr/arcrole/factExplanatory-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/negated" schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/net" schemaLocation="http://www.xbrl.org/lrr/role/net-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/country/2013-01-31" schemaLocation="http://xbrl.sec.gov/country/2013/country-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/currency/2014-01-31" schemaLocation="http://xbrl.sec.gov/currency/2014/currency-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/dei/2014-01-31" schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/exch/2014-01-31" schemaLocation="http://xbrl.sec.gov/exch/2014/exch-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/invest/2013-01-31" schemaLocation="http://xbrl.sec.gov/invest/2013/invest-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/naics/2011-01-31" schemaLocation="http://xbrl.sec.gov/naics/2011/naics-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/sic/2011-01-31" schemaLocation="http://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/stpr/2011-01-31" schemaLocation="http://xbrl.sec.gov/stpr/2011/stpr-2011-01-31.xsd" />
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="amzn-20141231_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="amzn-20141231_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="amzn-20141231_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="amzn-20141231_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple" />
+      <link:roleType id="AccumulatedOtherComprehensiveLoss" roleURI="http://www.amazon.com/role/AccumulatedOtherComprehensiveLoss">
+        <link:definition>2110100 - Disclosure - Accumulated Other Comprehensive Loss</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossChangesInCompositionOfAccumulatedOtherComprehensiveIncomeOrLossDetail" roleURI="http://www.amazon.com/role/AccumulatedOtherComprehensiveLossChangesInCompositionOfAccumulatedOtherComprehensiveIncomeOrLossDetail">
+        <link:definition>2410402 - Disclosure - Accumulated Other Comprehensive Loss Changes in Composition of Accumulated Other Comprehensive Income or Loss (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossTables" roleURI="http://www.amazon.com/role/AccumulatedOtherComprehensiveLossTables">
+        <link:definition>2310301 - Disclosure - Accumulated Other Comprehensive Loss (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssets" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssets">
+        <link:definition>2104100 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsAcquiredIntangibleAssetsDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsAcquiredIntangibleAssetsDetail">
+        <link:definition>2404406 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets Acquired Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsAdditionalInformationDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsAdditionalInformationDetail">
+        <link:definition>2404402 - Disclosure - Acquisitions Goodwill and Acquired Intangible Assets - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsAllocationOfAggregatePurchasePriceOfAcquisitionsDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsAllocationOfAggregatePurchasePriceOfAcquisitionsDetail">
+        <link:definition>2404403 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets Allocation of Aggregate Purchase Price of Acquisitions (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsBusinessAcquisitionsProFormaFinancialInformationDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsBusinessAcquisitionsProFormaFinancialInformationDetail">
+        <link:definition>2404404 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets Business Acquisitions Pro Forma Financial Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsExpectedFutureAmortizationExpenseOfAcquiredIntangibleAssetsDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsExpectedFutureAmortizationExpenseOfAcquiredIntangibleAssetsDetail">
+        <link:definition>2404407 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets Expected Future Amortization Expense of Acquired Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsSummaryOfGoodwillActivityBySegmentDetail" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsSummaryOfGoodwillActivityBySegmentDetail">
+        <link:definition>2404405 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets Summary of Goodwill Activity by Segment (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsGoodwillAndAcquiredIntangibleAssetsTables" roleURI="http://www.amazon.com/role/AcquisitionsGoodwillAndAcquiredIntangibleAssetsTables">
+        <link:definition>2304301 - Disclosure - Acquisitions, Goodwill, and Acquired Intangible Assets (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CashCashEquivalentsAndMarketableSecurities" roleURI="http://www.amazon.com/role/CashCashEquivalentsAndMarketableSecurities">
+        <link:definition>2102100 - Disclosure - Cash, Cash Equivalents, and Marketable Securities</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CashCashEquivalentsAndMarketableSecuritiesGrossGrainsAndGrossLossesRealizedOnSalesOfAvailableForSaleMarketableSecuritiesDetails" roleURI="http://www.amazon.com/role/CashCashEquivalentsAndMarketableSecuritiesGrossGrainsAndGrossLossesRealizedOnSalesOfAvailableForSaleMarketableSecuritiesDetails">
+        <link:definition>2402403 - Disclosure - Cash, Cash Equivalents, and Marketable Securities - Gross Grains and Gross Losses Realized on Sales of Available-For-Sale Marketable Securities (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CashCashEquivalentsAndMarketableSecuritiesSummaryByMajorSecurityTypeCashCashEquivalentsAndMarketableSecuritiesMeasuredAtFairValueOnRecurringBasisAndCategorizedUsingFairValueHierarchyDetail" roleURI="http://www.amazon.com/role/CashCashEquivalentsAndMarketableSecuritiesSummaryByMajorSecurityTypeCashCashEquivalentsAndMarketableSecuritiesMeasuredAtFairValueOnRecurringBasisAndCategorizedUsingFairValueHierarchyDetail">
+        <link:definition>2402402 - Disclosure - Cash, Cash Equivalents, and Marketable Securities - Summary by Major Security Type Cash Cash Equivalents and Marketable Securities Measured at Fair Value on Recurring Basis and Categorized Using Fair Value Hierarchy (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CashCashEquivalentsAndMarketableSecuritiesSummaryOfContractualMaturitiesOfCashEquivalentAndMarketableFixedIncomeSecuritiesDetail" roleURI="http://www.amazon.com/role/CashCashEquivalentsAndMarketableSecuritiesSummaryOfContractualMaturitiesOfCashEquivalentAndMarketableFixedIncomeSecuritiesDetail">
+        <link:definition>2402404 - Disclosure - Cash, Cash Equivalents, and Marketable Securities - Summary of Contractual Maturities of Cash Equivalent and Marketable Fixed Income Securities (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CashCashEquivalentsAndMarketableSecuritiesTables" roleURI="http://www.amazon.com/role/CashCashEquivalentsAndMarketableSecuritiesTables">
+        <link:definition>2302301 - Disclosure - Cash, Cash Equivalents, and Marketable Securities (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingencies" roleURI="http://www.amazon.com/role/CommitmentsAndContingencies">
+        <link:definition>2108100 - Disclosure - Commitments and Contingencies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesAdditionalInformationDetail" roleURI="http://www.amazon.com/role/CommitmentsAndContingenciesAdditionalInformationDetail">
+        <link:definition>2408402 - Disclosure - Commitments and Contingencies - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesContractualCommitmentsExlcudingOpenOrdersForPurchasesThatSupportNormalOperationsDetail" roleURI="http://www.amazon.com/role/CommitmentsAndContingenciesContractualCommitmentsExlcudingOpenOrdersForPurchasesThatSupportNormalOperationsDetail">
+        <link:definition>2408403 - Disclosure - Commitments and Contingencies Contractual Commitments, Exlcuding Open Orders for Purchases that Support Normal Operations (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesTables" roleURI="http://www.amazon.com/role/CommitmentsAndContingenciesTables">
+        <link:definition>2308301 - Disclosure - Commitments and Contingencies (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheets" roleURI="http://www.amazon.com/role/ConsolidatedBalanceSheets">
+        <link:definition>1004000 - Statement - Consolidated Balance Sheets</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheetsParenthetical" roleURI="http://www.amazon.com/role/ConsolidatedBalanceSheetsParenthetical">
+        <link:definition>1004501 - Statement - Consolidated Balance Sheets (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfCashFlows" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfCashFlows">
+        <link:definition>1001000 - Statement - Consolidated Statements Of Cash Flows</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfComprehensiveIncome" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfComprehensiveIncome">
+        <link:definition>1002000 - Statement - Consolidated Statements of Comprehensive Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfComprehensiveIncomeParenthetical" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfComprehensiveIncomeParenthetical">
+        <link:definition>1002501 - Statement - Consolidated Statements of Comprehensive Income (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfOperations" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfOperations">
+        <link:definition>1001000 - Statement - Consolidated Statements Of Operations</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfOperationsParenthetical" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfOperationsParenthetical">
+        <link:definition>1001501 - Statement - Consolidated Statements Of Operations (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfStockholdersEquity" roleURI="http://www.amazon.com/role/ConsolidatedStatementsOfStockholdersEquity">
+        <link:definition>1006000 - Statement - Consolidated Statements of Stockholders' Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPolicies" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPolicies">
+        <link:definition>2101100 - Disclosure - Description of Business and Accounting Policies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPoliciesAdditionalInformationDetail" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPoliciesAdditionalInformationDetail">
+        <link:definition>2401403 - Disclosure - Description of Business and Accounting Policies - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPoliciesCalculationOfDilutedSharesAdditionalInformationDetails" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPoliciesCalculationOfDilutedSharesAdditionalInformationDetails">
+        <link:definition>2401405 - Disclosure - Description of Business and Accounting Policies Calculation of Diluted Shares Additional Information (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPoliciesCalculationOfDilutedSharesDetail" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPoliciesCalculationOfDilutedSharesDetail">
+        <link:definition>2401404 - Disclosure - Description of Business and Accounting Policies Calculation of Diluted Shares (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPoliciesPolicies" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPoliciesPolicies">
+        <link:definition>2201201 - Disclosure - Description of Business and Accounting Policies (Policies)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DescriptionOfBusinessAndAccountingPoliciesTables" roleURI="http://www.amazon.com/role/DescriptionOfBusinessAndAccountingPoliciesTables">
+        <link:definition>2301302 - Disclosure - Description of Business and Accounting Policies (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DocumentAndEntityInformation" roleURI="http://www.amazon.com/role/DocumentAndEntityInformation">
+        <link:definition>0001000 - Document - Document and Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EquityMethodInvestments" roleURI="http://www.amazon.com/role/EquityMethodInvestments">
+        <link:definition>2105100 - Disclosure - Equity-Method Investments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EquityMethodInvestmentsAdditionalInformationOfLivingsocialDetail" roleURI="http://www.amazon.com/role/EquityMethodInvestmentsAdditionalInformationOfLivingsocialDetail">
+        <link:definition>2405402 - Disclosure - Equity Method Investments - Additional Information of LivingSocial (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EquityMethodInvestmentsSummarizedCondensedFinancialInformationOfLivingsocialDetail" roleURI="http://www.amazon.com/role/EquityMethodInvestmentsSummarizedCondensedFinancialInformationOfLivingsocialDetail">
+        <link:definition>2405403 - Disclosure - Equity-Method Investments Summarized Condensed Financial Information of LivingSocial (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EquityMethodInvestmentsTables" roleURI="http://www.amazon.com/role/EquityMethodInvestmentsTables">
+        <link:definition>2305301 - Disclosure - Equity-Method Investments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxes" roleURI="http://www.amazon.com/role/IncomeTaxes">
+        <link:definition>2111100 - Disclosure - Income Taxes</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesAdditionalInformationDetail" roleURI="http://www.amazon.com/role/IncomeTaxesAdditionalInformationDetail">
+        <link:definition>2411402 - Disclosure - Income Taxes - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesComponentsOfProvisionForIncomeTaxesNetDetails" roleURI="http://www.amazon.com/role/IncomeTaxesComponentsOfProvisionForIncomeTaxesNetDetails">
+        <link:definition>2411403 - Disclosure - Income Taxes Components of Provision for Income Taxes, Net (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesDeferredIncomeTaxAssetsAndLiabilitiesDetails" roleURI="http://www.amazon.com/role/IncomeTaxesDeferredIncomeTaxAssetsAndLiabilitiesDetails">
+        <link:definition>2411406 - Disclosure - Income Taxes Deferred Income Tax Assets and Liabilities (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesItemsAccountingForDifferencesBetweenIncomeTaxesComputedAtFederalStatutoryRateAndProvisionRecordedForIncomeTaxesDetails" roleURI="http://www.amazon.com/role/IncomeTaxesItemsAccountingForDifferencesBetweenIncomeTaxesComputedAtFederalStatutoryRateAndProvisionRecordedForIncomeTaxesDetails">
+        <link:definition>2411405 - Disclosure - Income Taxes Items Accounting for Differences between Income Taxes Computed at Federal Statutory Rate and Provision Recorded for Income Taxes (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesReconciliationOfTaxContingenciesDetails" roleURI="http://www.amazon.com/role/IncomeTaxesReconciliationOfTaxContingenciesDetails">
+        <link:definition>2411407 - Disclosure - Income Taxes Reconciliation of Tax Contingencies (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesTables" roleURI="http://www.amazon.com/role/IncomeTaxesTables">
+        <link:definition>2311301 - Disclosure - Income Taxes (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesUSAndInternationalComponentsOfIncomeBeforeIncomeTaxesDetails" roleURI="http://www.amazon.com/role/IncomeTaxesUSAndInternationalComponentsOfIncomeBeforeIncomeTaxesDetails">
+        <link:definition>2411404 - Disclosure - Income Taxes U.S. and International Components of Income before Income Taxes (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebt" roleURI="http://www.amazon.com/role/LongTermDebt">
+        <link:definition>2106100 - Disclosure - Long-Term Debt</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebtAdditionalInformationDetail" roleURI="http://www.amazon.com/role/LongTermDebtAdditionalInformationDetail">
+        <link:definition>2406402 - Disclosure - Long-Term Debt - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebtFuturePrincipalPaymentForDebtDetails" roleURI="http://www.amazon.com/role/LongTermDebtFuturePrincipalPaymentForDebtDetails">
+        <link:definition>2406404 - Disclosure - Long-Term Debt Future Principal Payment for Debt (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebtLongTermDebtObligationsDetail" roleURI="http://www.amazon.com/role/LongTermDebtLongTermDebtObligationsDetail">
+        <link:definition>2406403 - Disclosure - Long-Term Debt Long-Term Debt Obligations (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebtTables" roleURI="http://www.amazon.com/role/LongTermDebtTables">
+        <link:definition>2306301 - Disclosure - Long-Term Debt (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OtherLongTermLiabilities" roleURI="http://www.amazon.com/role/OtherLongTermLiabilities">
+        <link:definition>2107100 - Disclosure - Other Long-Term Liabilities</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OtherLongTermLiabilitiesLongTermCapitalLeaseObligationDetail" roleURI="http://www.amazon.com/role/OtherLongTermLiabilitiesLongTermCapitalLeaseObligationDetail">
+        <link:definition>2407403 - Disclosure - Other Long-Term Liabilities Long Term Capital Lease Obligation (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OtherLongTermLiabilitiesLongTermFinanceLeaseObligationDetail" roleURI="http://www.amazon.com/role/OtherLongTermLiabilitiesLongTermFinanceLeaseObligationDetail">
+        <link:definition>2407404 - Disclosure - Other Long-Term Liabilities Long Term Finance Lease Obligation (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OtherLongTermLiabilitiesSummaryDetail" roleURI="http://www.amazon.com/role/OtherLongTermLiabilitiesSummaryDetail">
+        <link:definition>2407402 - Disclosure - Other Long Term Liabilities Summary (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OtherLongTermLiabilitiesTables" roleURI="http://www.amazon.com/role/OtherLongTermLiabilitiesTables">
+        <link:definition>2307301 - Disclosure - Other Long-Term Liabilities (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyAndEquipment" roleURI="http://www.amazon.com/role/PropertyAndEquipment">
+        <link:definition>2103100 - Disclosure - Property and Equipment</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyAndEquipmentAdditionalInformationDetail" roleURI="http://www.amazon.com/role/PropertyAndEquipmentAdditionalInformationDetail">
+        <link:definition>2403403 - Disclosure - Property and Equipment - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyAndEquipmentFixedAssetsAtCostDetail" roleURI="http://www.amazon.com/role/PropertyAndEquipmentFixedAssetsAtCostDetail">
+        <link:definition>2403402 - Disclosure - Property and Equipment Fixed Assets at Cost (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyAndEquipmentTables" roleURI="http://www.amazon.com/role/PropertyAndEquipmentTables">
+        <link:definition>2303301 - Disclosure - Property and Equipment (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="QuarterlyResultsUnaudited" roleURI="http://www.amazon.com/role/QuarterlyResultsUnaudited">
+        <link:definition>2113100 - Disclosure - Quarterly Results (Unaudited)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="QuarterlyResultsUnauditedTables" roleURI="http://www.amazon.com/role/QuarterlyResultsUnauditedTables">
+        <link:definition>2313301 - Disclosure - Quarterly Results (Unaudited) (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="QuarterlyResultsUnauditedUnauditedQuarterlyResultsDetail" roleURI="http://www.amazon.com/role/QuarterlyResultsUnauditedUnauditedQuarterlyResultsDetail">
+        <link:definition>2413402 - Disclosure - Quarterly Results (Unaudited) - Unaudited Quarterly Results (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformation" roleURI="http://www.amazon.com/role/SegmentInformation">
+        <link:definition>2112100 - Disclosure - Segment Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationAdditionalInformationDetail" roleURI="http://www.amazon.com/role/SegmentInformationAdditionalInformationDetail">
+        <link:definition>2412402 - Disclosure - Segment Information - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationDepreciationExpenseBySegmentDetails" roleURI="http://www.amazon.com/role/SegmentInformationDepreciationExpenseBySegmentDetails">
+        <link:definition>2412407 - Disclosure - Segment Information - Depreciation Expense, by Segment (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationNetSalesAttributedToForeignCountriesDetails" roleURI="http://www.amazon.com/role/SegmentInformationNetSalesAttributedToForeignCountriesDetails">
+        <link:definition>2412405 - Disclosure - Segment Information - Net Sales Attributed to Foreign Countries (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationNetSalesOfSimilarProductsAndServicesDetail" roleURI="http://www.amazon.com/role/SegmentInformationNetSalesOfSimilarProductsAndServicesDetail">
+        <link:definition>2412404 - Disclosure - Segment Information - Net Sales of Similar Products and Services (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationReportableSegmentsAndReconciliationToConsolidatedNetIncomeDetail" roleURI="http://www.amazon.com/role/SegmentInformationReportableSegmentsAndReconciliationToConsolidatedNetIncomeDetail">
+        <link:definition>2412403 - Disclosure - Segment Information - Reportable Segments and Reconciliation to Consolidated Net Income (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationTables" roleURI="http://www.amazon.com/role/SegmentInformationTables">
+        <link:definition>2312301 - Disclosure - Segment Information (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationTotalAssetsFixedAssetsNetAndTotalFixedAssetAdditionsBySegmentDetails" roleURI="http://www.amazon.com/role/SegmentInformationTotalAssetsFixedAssetsNetAndTotalFixedAssetAdditionsBySegmentDetails">
+        <link:definition>2412406 - Disclosure - Segment Information - Total Assets Fixed Assets Net and Total Fixed Asset Additions By Segment (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquity" roleURI="http://www.amazon.com/role/StockholdersEquity">
+        <link:definition>2109100 - Disclosure - Stockholders' Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityAdditionalInformationDetail" roleURI="http://www.amazon.com/role/StockholdersEquityAdditionalInformationDetail">
+        <link:definition>2409402 - Disclosure - Stockholders Equity - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityRestrictedStockUnitActivityDetail" roleURI="http://www.amazon.com/role/StockholdersEquityRestrictedStockUnitActivityDetail">
+        <link:definition>2409403 - Disclosure - Stockholders' Equity Restricted Stock Unit Activity (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityScheduledVestingForOutstandingRestrictedStockUnitsDetail" roleURI="http://www.amazon.com/role/StockholdersEquityScheduledVestingForOutstandingRestrictedStockUnitsDetail">
+        <link:definition>2409404 - Disclosure - Stockholders' Equity Scheduled Vesting for Outstanding Restricted Stock Units (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityTables" roleURI="http://www.amazon.com/role/StockholdersEquityTables">
+        <link:definition>2309301 - Disclosure - Stockholders' Equity (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element id="amzn_AccruedLiabilitiesPolicyPolicyTextBlock" name="AccruedLiabilitiesPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_AcquisitionsGoodwillAndIntangibleAssetsDisclosureTextBlock" name="AcquisitionsGoodwillAndIntangibleAssetsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_AssetsHeldUnderBuildToSuitLeasesMember" name="AssetsHeldUnderBuildToSuitLeasesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_CashCashEquivalentsAndMarketableSecuritiesAmortizedCost" name="CashCashEquivalentsAndMarketableSecuritiesAmortizedCost" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_CashCashEquivalentsAndMarketableSecuritiesLineItems" name="CashCashEquivalentsAndMarketableSecuritiesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_CashCashEquivalentsAndMarketableSecuritiesTable" name="CashCashEquivalentsAndMarketableSecuritiesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_CashCashEquivalentsAndMarketableSecuritiesUnrealizedGains" name="CashCashEquivalentsAndMarketableSecuritiesUnrealizedGains" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_CashCashEquivalentsAndMarketableSecuritiesUnrealizedLosses" name="CashCashEquivalentsAndMarketableSecuritiesUnrealizedLosses" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_CashCashEquivalentsAndShortTermInvestmentsMember" name="CashCashEquivalentsAndShortTermInvestmentsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_CashEquivalentsandMarketableSecuritiesAmortizedCostBasis" name="CashEquivalentsandMarketableSecuritiesAmortizedCostBasis" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_CashEquivalentsandMarketableSecuritiesFairValueDisclosure" name="CashEquivalentsandMarketableSecuritiesFairValueDisclosure" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_CashPaidForInterestCapitalandFinanceLeases" name="CashPaidForInterestCapitalandFinanceLeases" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_CloudComputingProductsMember" name="CloudComputingProductsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_CommonStockSharesOutstandingIncludingStockAwards" name="CommonStockSharesOutstandingIncludingStockAwards" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_ContentGuardHoldingsInc.Member" name="ContentGuardHoldingsInc.Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_DeferredTaxAssetsAssetsHeldForInvestment" name="DeferredTaxAssetsAssetsHeldForInvestment" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_DigitalVideoContentMember" name="DigitalVideoContentMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_DocumentDocumentAndEntityInformationAbstract" name="DocumentDocumentAndEntityInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_DueAfterFiveYearsThroughTenYearsMember" name="DueAfterFiveYearsThroughTenYearsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_DueAfterOneYearThroughFiveYearsMember" name="DueAfterOneYearThroughFiveYearsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_DueAfterTenYearsMember" name="DueAfterTenYearsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_DueInOneYearOrLessMember" name="DueInOneYearOrLessMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsAbstract" name="EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ElectronicsAndOtherGeneralMerchandiseMember" name="ElectronicsAndOtherGeneralMerchandiseMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_EquipmentAndInternalUseSoftwareMember" name="EquipmentAndInternalUseSoftwareMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_EquityAndCostMethodInvestmentBookValue" name="EquityAndCostMethodInvestmentBookValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_EquityAndCostMethodInvestmentOwnershipPercentage" name="EquityAndCostMethodInvestmentOwnershipPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_EquityMethodInvestmentSummarizedFinancialInformationAssetsHeldforsale" name="EquityMethodInvestmentSummarizedFinancialInformationAssetsHeldforsale" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_EquityMethodInvestmentSummarizedFinancialInformationIncomeLossfromDiscontinuedOperationsNetofTax" name="EquityMethodInvestmentSummarizedFinancialInformationIncomeLossfromDiscontinuedOperationsNetofTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="amzn_EquityMethodInvestmentSummarizedFinancialInformationLiabilitiesofAssetsHeldforsale" name="EquityMethodInvestmentSummarizedFinancialInformationLiabilitiesofAssetsHeldforsale" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_EquityMethodInvestmentSummarizedFinancialInformationOperatingExpenses" name="EquityMethodInvestmentSummarizedFinancialInformationOperatingExpenses" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="amzn_EquityMethodInvestmentSummarizedFinancialInformationOperatingIncomeLoss" name="EquityMethodInvestmentSummarizedFinancialInformationOperatingIncomeLoss" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="amzn_FinanceLeaseObligations" name="FinanceLeaseObligations" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeaseObligationsCurrent" name="FinanceLeaseObligationsCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeaseObligationsNoncurrent" name="FinanceLeaseObligationsNoncurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeasedAssetsGross" name="FinanceLeasedAssetsGross" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeasesFutureMinimumPaymentsInterestIncludedinPayments" name="FinanceLeasesFutureMinimumPaymentsInterestIncludedinPayments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeasesFutureMinimumPaymentsPresentValueofNetMinimumPayments" name="FinanceLeasesFutureMinimumPaymentsPresentValueofNetMinimumPayments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="amzn_FinanceLeasesLesseeBalanceSheetAssetsbyMajorClassAccumulatedDepreciation" name="FinanceLeasesLesseeBalanceSheetAssetsbyMajorClassAccumulatedDepreciation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_FinancingLeaseObligationsMember" name="FinancingLeaseObligationsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_FulfillmentExpense" name="FulfillmentExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_FulfillmentExpenseMember" name="FulfillmentExpenseMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_FulfillmentExpensesPolicyPolicyTextBlock" name="FulfillmentExpensesPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_FuturePrincipalPaymentsTextBlock" name="FuturePrincipalPaymentsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_IncomeTaxesLineItems" name="IncomeTaxesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_IncomeTaxesTable" name="IncomeTaxesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_InternationalMember" name="InternationalMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_InternationalRegionsMember" name="InternationalRegionsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_InvestmentsClassifiedByContractualMaturityDateLineItems" name="InvestmentsClassifiedByContractualMaturityDateLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_InvestmentsClassifiedByContractualMaturityDateTable" name="InvestmentsClassifiedByContractualMaturityDateTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_KivaSystemsIncorporatedMember" name="KivaSystemsIncorporatedMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_LicenseAgreementTerm" name="LicenseAgreementTerm" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_LossContingenciesByNameOfPlaintiffAxis" name="LossContingenciesByNameOfPlaintiffAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_LossContingenciesByNameOfPlaintiffDomain" name="LossContingenciesByNameOfPlaintiffDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_MediaMember" name="MediaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OperatingLossAndTaxCreditCarryforwardsAxis" name="OperatingLossAndTaxCreditCarryforwardsAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OperatingLossAndTaxCreditCarryforwardsDomain" name="OperatingLossAndTaxCreditCarryforwardsDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_OtherAssetAmortizationPeriod" name="OtherAssetAmortizationPeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherAssetsAxis" name="OtherAssetsAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherAssetsDomain" name="OtherAssetsDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_OtherAssetsPolicyPolicyTextBlock" name="OtherAssetsPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherCorporateAssetsMember" name="OtherCorporateAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherLiabilitiesLineItems" name="OtherLiabilitiesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherLiabilitiesTable" name="OtherLiabilitiesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OtherNonRetailMember" name="OtherNonRetailMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_OutsideUnitedStatesMember" name="OutsideUnitedStatesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_PeriodAxis" name="PeriodAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_PeriodDomain" name="PeriodDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_PersonalizedMediaCommunicationsLLCMember" name="PersonalizedMediaCommunicationsLLCMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_PurchasePriceAllocationAbstract" name="PurchasePriceAllocationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ReconciliationOfDepreciationBySegmentLineItems" name="ReconciliationOfDepreciationBySegmentLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ReconciliationOfDepreciationBySegmentTable" name="ReconciliationOfDepreciationBySegmentTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_RegionReportingInformationByRegionAxis" name="RegionReportingInformationByRegionAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_RepaymentsOfLongTermfFinancingLeaseObligations" name="RepaymentsOfLongTermfFinancingLeaseObligations" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ReportingRegionDomain" name="ReportingRegionDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_SalesReturnsandAllowancesDeductions" name="SalesReturnsandAllowancesDeductions" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="amzn_ScheduleOfCapitalLeaseObligationsTextBlock" name="ScheduleOfCapitalLeaseObligationsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesLineItems" name="ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesTable" name="ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_ScheduleOfDepreciationExpenseBySegmentTextBlock" name="ScheduleOfDepreciationExpenseBySegmentTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_ScheduleOfTotalAssetsPropertyPlantAndEquipmentAndAdditionsBySegmentTableTextBlock" name="ScheduleOfTotalAssetsPropertyPlantAndEquipmentAndAdditionsBySegmentTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ScheduleOfVestingLineItems" name="ScheduleOfVestingLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_ScheduleOfVestingTable" name="ScheduleOfVestingTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_ScheduledVestingDisclosure" name="ScheduledVestingDisclosure" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingThereafter" name="ScheduledVestingThereafter" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingYearFive" name="ScheduledVestingYearFive" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingYearFour" name="ScheduledVestingYearFour" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingYearOne" name="ScheduledVestingYearOne" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingYearThree" name="ScheduledVestingYearThree" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduledVestingYearTwo" name="ScheduledVestingYearTwo" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="amzn_ScheduleofFinanceLeaseObligationsTableTextBlock" name="ScheduleofFinanceLeaseObligationsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_SecuritiesandFixedAssetsOwnedandPledgedasCollateralFairValue" name="SecuritiesandFixedAssetsOwnedandPledgedasCollateralFairValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="amzn_SegmentReportingDisclosureLineItems" name="SegmentReportingDisclosureLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SegmentReportingDisclosureTable" name="SegmentReportingDisclosureTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorNotes2Member" name="SeniorNotes2Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesFourPointEightPercentDueDecemberFifthTwoThousandThirtyFourMember" name="SeniorUnsecuredNotesFourPointEightPercentDueDecemberFifthTwoThousandThirtyFourMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesFourPointNineFivePercentDueDecemberFifthTwoThousandFortyFourMember" name="SeniorUnsecuredNotesFourPointNineFivePercentDueDecemberFifthTwoThousandFortyFourMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesOnePointTwoPercentDueNovemberTwentyNineTwoThousandSeventeenMember" name="SeniorUnsecuredNotesOnePointTwoPercentDueNovemberTwentyNineTwoThousandSeventeenMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesThreePointEightPercentDueDecemberFifthTwoThousandTwentyFourMember" name="SeniorUnsecuredNotesThreePointEightPercentDueDecemberFifthTwoThousandTwentyFourMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesThreePointThreePercentDueDecemberFifthTwoThousandTwentyOneMember" name="SeniorUnsecuredNotesThreePointThreePercentDueDecemberFifthTwoThousandTwentyOneMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesTwoPointFivePercentDueNovemberTwentyNineTwoThousandTwentyTwoMember" name="SeniorUnsecuredNotesTwoPointFivePercentDueNovemberTwentyNineTwoThousandTwentyTwoMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesTwoPointSixPercentDueDecemberFifthTwoThousandNineteenMemberMember" name="SeniorUnsecuredNotesTwoPointSixPercentDueDecemberFifthTwoThousandNineteenMemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SeniorUnsecuredNotesZeroPointSixFivePercentDueNovemberTwentySevenTwoThousandFifteenMember" name="SeniorUnsecuredNotesZeroPointSixFivePercentDueNovemberTwentySevenTwoThousandFifteenMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SignificantAccountingPoliciesLineItems" name="SignificantAccountingPoliciesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SignificantAccountingPoliciesTable" name="SignificantAccountingPoliciesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_SmartflashLLCandSmartflashTechnologiesLimitedMember" name="SmartflashLLCandSmartflashTechnologiesLimitedMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_StockBasedCompensationExpenseMember" name="StockBasedCompensationExpenseMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_StockIssuedDuringPeriodSharesFourZeroOneKEmployerMatch" name="StockIssuedDuringPeriodSharesFourZeroOneKEmployerMatch" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_StockholdersEquityNoteLineItems" name="StockholdersEquityNoteLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_StockholdersEquityNoteTable" name="StockholdersEquityNoteTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_TechnologyAndContentExpense" name="TechnologyAndContentExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_TechnologyAndContentExpenseMember" name="TechnologyAndContentExpenseMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_TechnologyAndContentExpensesPolicyPolicyTextBlock" name="TechnologyAndContentExpensesPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_TwitchInteractiveInc.Member" name="TwitchInteractiveInc.Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="amzn_UnredeemedGiftCardsPeriodOfRecognition" name="UnredeemedGiftCardsPeriodOfRecognition" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_VendorReceivableMember" name="VendorReceivableMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="amzn_YearMember" name="YearMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+</xsd:schema>

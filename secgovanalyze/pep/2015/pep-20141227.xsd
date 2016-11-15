@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--XBRL Document Created with Wdesk from Workiva, formerly WebFilings-->
+<!-- -->
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.pepsico.com/20141227" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:pep="http://www.pepsico.com/20141227" xmlns:us-types="http://fasb.org/us-types/2014-01-31" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://fasb.org/us-gaap/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-gaap-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-roles/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-roles-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-types/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-types-2014-01-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/arcrole/fact-explanatoryFact" schemaLocation="http://www.xbrl.org/lrr/arcrole/factExplanatory-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/negated" schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/net" schemaLocation="http://www.xbrl.org/lrr/role/net-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/country/2013-01-31" schemaLocation="http://xbrl.sec.gov/country/2013/country-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/currency/2014-01-31" schemaLocation="http://xbrl.sec.gov/currency/2014/currency-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/dei/2014-01-31" schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/exch/2014-01-31" schemaLocation="http://xbrl.sec.gov/exch/2014/exch-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/invest/2013-01-31" schemaLocation="http://xbrl.sec.gov/invest/2013/invest-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/naics/2011-01-31" schemaLocation="http://xbrl.sec.gov/naics/2011/naics-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/sic/2011-01-31" schemaLocation="http://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/stpr/2011-01-31" schemaLocation="http://xbrl.sec.gov/stpr/2011/stpr-2011-01-31.xsd" />
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pep-20141227_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pep-20141227_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pep-20141227_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pep-20141227_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple" />
+      <link:roleType id="AccumulatedOtherComprehensiveLossAttributableToPepsico" roleURI="http://www.pepsico.com/role/AccumulatedOtherComprehensiveLossAttributableToPepsico">
+        <link:definition>2113100 - Disclosure - Accumulated Other Comprehensive Loss Attributable to Pepsico</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossAttributableToPepsicoReclassificationOfAccumulatedOtherComprehensiveLossToCondensedConsolidatedStatementOfIncomeDetails" roleURI="http://www.pepsico.com/role/AccumulatedOtherComprehensiveLossAttributableToPepsicoReclassificationOfAccumulatedOtherComprehensiveLossToCondensedConsolidatedStatementOfIncomeDetails">
+        <link:definition>2413403 - Disclosure - Accumulated Other Comprehensive Loss Attributable to Pepsico Reclassification of Accumulated Other Comprehensive Loss to the Condensed Consolidated Statement of Income (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossAttributableToPepsicoScheduleOfAccumulatedOtherComprehensiveIncomeLossDetails" roleURI="http://www.pepsico.com/role/AccumulatedOtherComprehensiveLossAttributableToPepsicoScheduleOfAccumulatedOtherComprehensiveIncomeLossDetails">
+        <link:definition>2413402 - Disclosure - Accumulated Other Comprehensive Loss Attributable to Pepsico (Schedule of Accumulated Other Comprehensive Income (Loss)) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossAttributableToPepsicoTables" roleURI="http://www.pepsico.com/role/AccumulatedOtherComprehensiveLossAttributableToPepsicoTables">
+        <link:definition>2313301 - Disclosure - Accumulated Other Comprehensive Loss Attributable to Pepsico (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="Acquisitions" roleURI="http://www.pepsico.com/role/Acquisitions">
+        <link:definition>2115100 - Disclosure - Acquisitions</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AcquisitionsNarrativeDetails" roleURI="http://www.pepsico.com/role/AcquisitionsNarrativeDetails">
+        <link:definition>2415401 - Disclosure - Acquisitions (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisions" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisions">
+        <link:definition>2101100 - Disclosure - Basis of Presentation and Our Divisions</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsNarrativeDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsNarrativeDetails">
+        <link:definition>2401402 - Disclosure - Basis of Presentation and Our Divisions (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsScheduleOfQuarterlyReportingDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsScheduleOfQuarterlyReportingDetails">
+        <link:definition>2401403 - Disclosure - Basis of Presentation and Our Divisions (Schedule of Quarterly Reporting) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsScheduleOfSegmentReportingInformationBySegmentDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsScheduleOfSegmentReportingInformationBySegmentDetails">
+        <link:definition>2401404 - Disclosure - Basis of Presentation and Our Divisions (Schedule of Segment Reporting Information, by Segment) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsSegmentReportingInformationByAmortizationOfIntangibleAssetsAndDepreciationAndOtherAmortizationDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsSegmentReportingInformationByAmortizationOfIntangibleAssetsAndDepreciationAndOtherAmortizationDetails">
+        <link:definition>2401406 - Disclosure - Basis of Presentation and Our Divisions (Segment Reporting Information by Amortization of Intangible Assets and Depreciation and Other Amortization) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsSegmentReportingInformationByNetRevenueAndLongLivedAssetsDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsSegmentReportingInformationByNetRevenueAndLongLivedAssetsDetails">
+        <link:definition>2401407 - Disclosure - Basis of Presentation and Our Divisions (Segment Reporting Information by Net Revenue and Long-Lived Assets) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsSegmentReportingInformationByTotalAssetsAndCapitalSpendingDetails" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsSegmentReportingInformationByTotalAssetsAndCapitalSpendingDetails">
+        <link:definition>2401405 - Disclosure - Basis of Presentation and Our Divisions (Segment Reporting Information by Total Assets and Capital Spending) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BasisOfPresentationAndOurDivisionsTables" roleURI="http://www.pepsico.com/role/BasisOfPresentationAndOurDivisionsTables">
+        <link:definition>2301301 - Disclosure - Basis of Presentation and Our Divisions (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheet" roleURI="http://www.pepsico.com/role/ConsolidatedBalanceSheet">
+        <link:definition>1004000 - Statement - Consolidated Balance Sheet</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheetParenthetical" roleURI="http://www.pepsico.com/role/ConsolidatedBalanceSheetParenthetical">
+        <link:definition>1004501 - Statement - Consolidated Balance Sheet (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfCashFlows" roleURI="http://www.pepsico.com/role/ConsolidatedStatementOfCashFlows">
+        <link:definition>1003000 - Statement - Consolidated Statement of Cash Flows</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfComprehensiveIncome" roleURI="http://www.pepsico.com/role/ConsolidatedStatementOfComprehensiveIncome">
+        <link:definition>1002000 - Statement - Consolidated Statement of Comprehensive Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfEquity" roleURI="http://www.pepsico.com/role/ConsolidatedStatementOfEquity">
+        <link:definition>1005000 - Statement - Consolidated Statement of Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfEquityParenthetical" roleURI="http://www.pepsico.com/role/ConsolidatedStatementOfEquityParenthetical">
+        <link:definition>1005501 - Statement - Consolidated Statement of Equity (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfIncome" roleURI="http://www.pepsico.com/role/ConsolidatedStatementOfIncome">
+        <link:definition>1001000 - Statement - Consolidated Statement of Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DebtObligationsAndCommitments" roleURI="http://www.pepsico.com/role/DebtObligationsAndCommitments">
+        <link:definition>2109100 - Disclosure - Debt Obligations and Commitments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DebtObligationsAndCommitmentsLongTermContractualCommitmentsDetails" roleURI="http://www.pepsico.com/role/DebtObligationsAndCommitmentsLongTermContractualCommitmentsDetails">
+        <link:definition>2409404 - Disclosure - Debt Obligations and Commitments (Long-Term Contractual Commitments) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DebtObligationsAndCommitmentsNarrativeDetails" roleURI="http://www.pepsico.com/role/DebtObligationsAndCommitmentsNarrativeDetails">
+        <link:definition>2409402 - Disclosure - Debt Obligations and Commitments (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DebtObligationsAndCommitmentsScheduleOfLongAndShortTermDebtContractualCommitmentsDetails" roleURI="http://www.pepsico.com/role/DebtObligationsAndCommitmentsScheduleOfLongAndShortTermDebtContractualCommitmentsDetails">
+        <link:definition>2409403 - Disclosure - Debt Obligations and Commitments (Schedule of Long and Short-Term Debt Contractual Commitments) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DebtObligationsAndCommitmentsTables" roleURI="http://www.pepsico.com/role/DebtObligationsAndCommitmentsTables">
+        <link:definition>2309301 - Disclosure - Debt Obligations and Commitments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DocumentAndEntityInformation" roleURI="http://www.pepsico.com/role/DocumentAndEntityInformation">
+        <link:definition>0001000 - Document - Document And Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="FinancialInstruments" roleURI="http://www.pepsico.com/role/FinancialInstruments">
+        <link:definition>2110100 - Disclosure - Financial Instruments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="FinancialInstrumentsEffectivePortionOfPreTaxGainsLossesOnDerivativeInstrumentsDetails" roleURI="http://www.pepsico.com/role/FinancialInstrumentsEffectivePortionOfPreTaxGainsLossesOnDerivativeInstrumentsDetails">
+        <link:definition>2410404 - Disclosure - Financial Instruments (Effective Portion of Pre-Tax (Gains)/Losses on Derivative Instruments) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="FinancialInstrumentsFairValuesOfFinancialAssetsAndLiabilitiesDetails" roleURI="http://www.pepsico.com/role/FinancialInstrumentsFairValuesOfFinancialAssetsAndLiabilitiesDetails">
+        <link:definition>2410403 - Disclosure - Financial Instruments (Fair Values of Financial Assets and Liabilities) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="FinancialInstrumentsNarrativeDetails" roleURI="http://www.pepsico.com/role/FinancialInstrumentsNarrativeDetails">
+        <link:definition>2410402 - Disclosure - Financial Instruments (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="FinancialInstrumentsTables" roleURI="http://www.pepsico.com/role/FinancialInstrumentsTables">
+        <link:definition>2310301 - Disclosure - Financial Instruments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxes" roleURI="http://www.pepsico.com/role/IncomeTaxes">
+        <link:definition>2105100 - Disclosure - Income Taxes</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesIncomeTaxesDetails" roleURI="http://www.pepsico.com/role/IncomeTaxesIncomeTaxesDetails">
+        <link:definition>2405403 - Disclosure - Income Taxes (Income Taxes) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesIncomeTaxesDetailsCalc2" roleURI="http://www.pepsico.com/role/IncomeTaxesIncomeTaxesDetailsCalc2">
+        <link:definition>2405403 - Disclosure - Income Taxes (Income Taxes) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesNarrativeDetails" roleURI="http://www.pepsico.com/role/IncomeTaxesNarrativeDetails">
+        <link:definition>2405402 - Disclosure - Income Taxes (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesReservesRollforwardDetails" roleURI="http://www.pepsico.com/role/IncomeTaxesReservesRollforwardDetails">
+        <link:definition>2405404 - Disclosure - Income Taxes (Reserves Rollforward) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesTables" roleURI="http://www.pepsico.com/role/IncomeTaxesTables">
+        <link:definition>2305301 - Disclosure - Income Taxes (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="NetIncomeAttributableToPepsicoPerCommonShare" roleURI="http://www.pepsico.com/role/NetIncomeAttributableToPepsicoPerCommonShare">
+        <link:definition>2111100 - Disclosure - Net Income Attributable to PepsiCo per Common Share</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="NetIncomeAttributableToPepsicoPerCommonShareBasicAndDilutedNetIncomeAttributableToPepsicoPerCommonShareDetails" roleURI="http://www.pepsico.com/role/NetIncomeAttributableToPepsicoPerCommonShareBasicAndDilutedNetIncomeAttributableToPepsicoPerCommonShareDetails">
+        <link:definition>2411403 - Disclosure - Net Income Attributable to PepsiCo per Common Share (Basic and Diluted Net Income Attributable to PepsiCo per Common Share) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="NetIncomeAttributableToPepsicoPerCommonShareNarrativeDetails" roleURI="http://www.pepsico.com/role/NetIncomeAttributableToPepsicoPerCommonShareNarrativeDetails">
+        <link:definition>2411402 - Disclosure - Net Income Attributable to PepsiCo per Common Share (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="NetIncomeAttributableToPepsicoPerCommonShareTables" roleURI="http://www.pepsico.com/role/NetIncomeAttributableToPepsicoPerCommonShareTables">
+        <link:definition>2311301 - Disclosure - Net Income Attributable to PepsiCo per Common Share (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OurSignificantAccountingPolicies" roleURI="http://www.pepsico.com/role/OurSignificantAccountingPolicies">
+        <link:definition>2102100 - Disclosure - Our Significant Accounting Policies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OurSignificantAccountingPoliciesConcentrationOfCreditRiskDetails" roleURI="http://www.pepsico.com/role/OurSignificantAccountingPoliciesConcentrationOfCreditRiskDetails">
+        <link:definition>2402404 - Disclosure - Our Significant Accounting Policies (Concentration of Credit Risk) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OurSignificantAccountingPoliciesDetails" roleURI="http://www.pepsico.com/role/OurSignificantAccountingPoliciesDetails">
+        <link:definition>2402402 - Disclosure - Our Significant Accounting Policies (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OurSignificantAccountingPoliciesNarrativeDetails" roleURI="http://www.pepsico.com/role/OurSignificantAccountingPoliciesNarrativeDetails">
+        <link:definition>2402403 - Disclosure - Our Significant Accounting Policies (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OurSignificantAccountingPoliciesPolicy" roleURI="http://www.pepsico.com/role/OurSignificantAccountingPoliciesPolicy">
+        <link:definition>2202201 - Disclosure - Our Significant Accounting Policies (Policy)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlans" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlans">
+        <link:definition>2107100 - Disclosure - Pension, Retiree Medical and Savings Plans</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansCategorizedPlanAssetsMeasuredAtFairValueDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansCategorizedPlanAssetsMeasuredAtFairValueDetails">
+        <link:definition>2407410 - Disclosure - Pension, Retiree Medical and Savings Plans (Categorized Plan Assets Measured at Fair Value) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansComponentsOfBenefitExpenseDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansComponentsOfBenefitExpenseDetails">
+        <link:definition>2407404 - Disclosure - Pension, Retiree Medical and Savings Plans (Components of Benefit Expense) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansEffectsOf1PercentagePointChangeInAssumedHealthCareTrendRateDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansEffectsOf1PercentagePointChangeInAssumedHealthCareTrendRateDetails">
+        <link:definition>2407412 - Disclosure - Pension, Retiree Medical and Savings Plans (Effects of 1-Percentage-Point Change in the Assumed Health Care Trend Rate) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansEstimatedAmountsToBeAmortizedFromAccumulatedOtherComprehensiveLossIntoBenefitExpenseIn2012ForPensionAndRetireeMedicalPlansDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansEstimatedAmountsToBeAmortizedFromAccumulatedOtherComprehensiveLossIntoBenefitExpenseIn2012ForPensionAndRetireeMedicalPlansDetails">
+        <link:definition>2407405 - Disclosure - Pension, Retiree Medical and Savings Plans (Estimated Amounts to be Amortized from Accumulated Other Comprehensive Loss into Benefit Expense in 2012 for Pension and Retiree Medical Plans) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansEstimatedFutureBenefitPaymentsDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansEstimatedFutureBenefitPaymentsDetails">
+        <link:definition>2407408 - Disclosure - Pension, Retiree Medical and Savings Plans (Estimated Future Benefit Payments) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansLevel3AssetsDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansLevel3AssetsDetails">
+        <link:definition>2407411 - Disclosure - Pension, Retiree Medical and Savings Plans (Level 3 Assets) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansNarrativeDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansNarrativeDetails">
+        <link:definition>2407402 - Disclosure - Pension, Retiree Medical and Savings Plans (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansPensionRetireeMedicalAndSavingsPlansTargetAssetAllocationsDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansPensionRetireeMedicalAndSavingsPlansTargetAssetAllocationsDetails">
+        <link:definition>2407409 - Disclosure - Pension, Retiree Medical and Savings Plans Pension, Retiree Medical and Savings Plans (Target Asset Allocations) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansSelectedFinancialInformationForPensionAndRetireeMedicalPlansDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansSelectedFinancialInformationForPensionAndRetireeMedicalPlansDetails">
+        <link:definition>2407403 - Disclosure - Pension, Retiree Medical and Savings Plans (Selected Financial Information for Pension and Retiree Medical Plans) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansSelectedInformationAboutPlansWithLiabilityForServiceToDateAndTotalBenefitLiabilityInExcessOfPlanAssetsDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansSelectedInformationAboutPlansWithLiabilityForServiceToDateAndTotalBenefitLiabilityInExcessOfPlanAssetsDetails">
+        <link:definition>2407407 - Disclosure - Pension, Retiree Medical and Savings Plans (Selected Information About Plans with Liability for Service to Date and Total Benefit Liability in Excess of Plan Assets) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansTables" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansTables">
+        <link:definition>2307301 - Disclosure - Pension, Retiree Medical and Savings Plans (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PensionRetireeMedicalAndSavingsPlansWeightedAverageAssumptionsToDetermineProjectedBenefitLiabilityAndBenefitExpenseForPensionAndRetireeMedicalPlansDetails" roleURI="http://www.pepsico.com/role/PensionRetireeMedicalAndSavingsPlansWeightedAverageAssumptionsToDetermineProjectedBenefitLiabilityAndBenefitExpenseForPensionAndRetireeMedicalPlansDetails">
+        <link:definition>2407406 - Disclosure - Pension, Retiree Medical and Savings Plans (Weighted-Average Assumptions to Determine Projected Benefit Liability and Benefit Expense for Pension and Retiree Medical Plans) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PreferredStock" roleURI="http://www.pepsico.com/role/PreferredStock">
+        <link:definition>2112100 - Disclosure - Preferred Stock</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PreferredStockNarrativeDetails" roleURI="http://www.pepsico.com/role/PreferredStockNarrativeDetails">
+        <link:definition>2412402 - Disclosure - Preferred Stock (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PreferredStockScheduleOfPreferredStockDetails" roleURI="http://www.pepsico.com/role/PreferredStockScheduleOfPreferredStockDetails">
+        <link:definition>2412403 - Disclosure - Preferred Stock (Schedule of Preferred Stock) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PreferredStockTables" roleURI="http://www.pepsico.com/role/PreferredStockTables">
+        <link:definition>2312301 - Disclosure - Preferred Stock (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyPlantAndEquipmentAndIntangibleAssets" roleURI="http://www.pepsico.com/role/PropertyPlantAndEquipmentAndIntangibleAssets">
+        <link:definition>2104100 - Disclosure - Property, Plant and Equipment and Intangible Assets</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyPlantAndEquipmentAndIntangibleAssetsFutureAmortizationDetails" roleURI="http://www.pepsico.com/role/PropertyPlantAndEquipmentAndIntangibleAssetsFutureAmortizationDetails">
+        <link:definition>2404403 - Disclosure - Property, Plant and Equipment and Intangible Assets (Future Amortization) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyPlantAndEquipmentAndIntangibleAssetsScheduleOfChangeInBookValueOfNonamortizableIntangibleAssetsDetails" roleURI="http://www.pepsico.com/role/PropertyPlantAndEquipmentAndIntangibleAssetsScheduleOfChangeInBookValueOfNonamortizableIntangibleAssetsDetails">
+        <link:definition>2404404 - Disclosure - Property, Plant and Equipment and Intangible Assets (Schedule of Change in Book Value of Nonamortizable Intangible Assets) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyPlantAndEquipmentAndIntangibleAssetsScheduleOfPropertyPlantAndEquipmentAndIntangibleAssetsDetails" roleURI="http://www.pepsico.com/role/PropertyPlantAndEquipmentAndIntangibleAssetsScheduleOfPropertyPlantAndEquipmentAndIntangibleAssetsDetails">
+        <link:definition>2404402 - Disclosure - Property, Plant and Equipment and Intangible Assets (Schedule of Property, Plant and Equipment and Intangible Assets) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="PropertyPlantAndEquipmentAndIntangibleAssetsTables" roleURI="http://www.pepsico.com/role/PropertyPlantAndEquipmentAndIntangibleAssetsTables">
+        <link:definition>2304301 - Disclosure - Property, Plant and Equipment and Intangible Assets (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RelatedPartyTransactions" roleURI="http://www.pepsico.com/role/RelatedPartyTransactions">
+        <link:definition>2108100 - Disclosure - Related Party Transactions</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationCharges" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationCharges">
+        <link:definition>2103100 - Disclosure - Restructuring, Impairment and Integration Charges</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesNarrativeDetails" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesNarrativeDetails">
+        <link:definition>2403402 - Disclosure - Restructuring, Impairment and Integration Charges (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesRestructuringImpairmentIntegrationChargesSummaryOf2014ProductivityPlanChargesDetails" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesRestructuringImpairmentIntegrationChargesSummaryOf2014ProductivityPlanChargesDetails">
+        <link:definition>2403403 - Disclosure - Restructuring, Impairment and Integration Charges Restructuring, Impairment, Integration Charges (Summary of 2014 Productivity Plan Charges) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesScheduleOfMergerAndIntegrationActivityDetails" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesScheduleOfMergerAndIntegrationActivityDetails">
+        <link:definition>2403406 - Disclosure - Restructuring, Impairment and Integration Charges (Schedule of Merger and Integration Activity) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesSummaryOfProductivityPlanActivityDetails" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesSummaryOfProductivityPlanActivityDetails">
+        <link:definition>2403405 - Disclosure - Restructuring, Impairment and Integration Charges (Summary of Productivity Plan Activity) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesSummaryOfProductivityPlanChargesDetails" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesSummaryOfProductivityPlanChargesDetails">
+        <link:definition>2403404 - Disclosure - Restructuring, Impairment and Integration Charges (Summary of Productivity Plan Charges) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="RestructuringImpairmentAndIntegrationChargesTables" roleURI="http://www.pepsico.com/role/RestructuringImpairmentAndIntegrationChargesTables">
+        <link:definition>2303301 - Disclosure - Restructuring, Impairment and Integration Charges (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensation" roleURI="http://www.pepsico.com/role/StockBasedCompensation">
+        <link:definition>2106100 - Disclosure - Stock-Based Compensation</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationNarrativeDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationNarrativeDetails">
+        <link:definition>2406402 - Disclosure - Stock-Based Compensation (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationOtherStockBasedCompensationDataDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationOtherStockBasedCompensationDataDetails">
+        <link:definition>2406407 - Disclosure - Stock-Based Compensation (Other Stock-Based Compensation Data) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationRestrictedStockUnitsAndPepunitsActivityDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationRestrictedStockUnitsAndPepunitsActivityDetails">
+        <link:definition>2406406 - Disclosure - Stock-Based Compensation (Restricted Stock Units and PEPUnits Activity) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationScheduleOfWeightedAverageBlackScholesFairValueAssumptionsDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationScheduleOfWeightedAverageBlackScholesFairValueAssumptionsDetails">
+        <link:definition>2406404 - Disclosure - Stock-Based Compensation (Schedule of Weighted-Average Black-Scholes Fair Value Assumptions) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationStockOptionActivityDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationStockOptionActivityDetails">
+        <link:definition>2406405 - Disclosure - Stock-Based Compensation (Stock Option Activity) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationSummaryOfCompensationCostsDetails" roleURI="http://www.pepsico.com/role/StockBasedCompensationSummaryOfCompensationCostsDetails">
+        <link:definition>2406403 - Disclosure - Stock-Based Compensation (Summary of Compensation Costs) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockBasedCompensationTables" roleURI="http://www.pepsico.com/role/StockBasedCompensationTables">
+        <link:definition>2306301 - Disclosure - Stock-Based Compensation (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SupplementalFinancialInformation" roleURI="http://www.pepsico.com/role/SupplementalFinancialInformation">
+        <link:definition>2114100 - Disclosure - Supplemental Financial Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SupplementalFinancialInformationScheduleOfOtherSupplementalInformationDetails" roleURI="http://www.pepsico.com/role/SupplementalFinancialInformationScheduleOfOtherSupplementalInformationDetails">
+        <link:definition>2414403 - Disclosure - Supplemental Financial Information (Schedule of Other Supplemental Information) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SupplementalFinancialInformationScheduleOfSupplementalBalanceSheetInformationDetails" roleURI="http://www.pepsico.com/role/SupplementalFinancialInformationScheduleOfSupplementalBalanceSheetInformationDetails">
+        <link:definition>2414402 - Disclosure - Supplemental Financial Information (Schedule of Supplemental Balance Sheet Information) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SupplementalFinancialInformationTables" roleURI="http://www.pepsico.com/role/SupplementalFinancialInformationTables">
+        <link:definition>2314301 - Disclosure - Supplemental Financial Information (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element abstract="true" id="pep_A2014ProductivityPlanMemberMember" name="A2014ProductivityPlanMemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_A364DayUnsecuredRevolvingCreditAgreementMemberMember" name="A364DayUnsecuredRevolvingCreditAgreementMemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_AccruedMarketplaceSpending" name="AccruedMarketplaceSpending" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostRetirementPlansTaxes" name="AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostRetirementPlansTaxes" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_AccumulatedOtherComprehensiveIncomeLossOther" name="AccumulatedOtherComprehensiveIncomeLossOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_AcquiredFranchiseRightsMember" name="AcquiredFranchiseRightsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_AcquisitionsAndDivestituresToNoncontrollingInterest" name="AcquisitionsAndDivestituresToNoncontrollingInterest" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_AllOtherCountriesMember" name="AllOtherCountriesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_AllocatedSharebasedCompensationExpenseAfterMergerIntegrationandRestructuringImpairment" name="AllocatedSharebasedCompensationExpenseAfterMergerIntegrationandRestructuringImpairment" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_AllowanceForDoubtfulAccountsDeduction" name="AllowanceForDoubtfulAccountsDeduction" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_AllowanceForDoubtfulAccountsOther" name="AllowanceForDoubtfulAccountsOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_AmortizationofNetActuarialLossesOCI" name="AmortizationofNetActuarialLossesOCI" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_AssetImpairmentMember" name="AssetImpairmentMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_AvailableforsaleAxis" name="AvailableforsaleAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_AvailableforsaleDomain" name="AvailableforsaleDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_BasisOfPresentationAndOurDivisionsLineItems" name="BasisOfPresentationAndOurDivisionsLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_BasisOfPresentationAndOurDivisionsTable" name="BasisOfPresentationAndOurDivisionsTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_BrandsMember" name="BrandsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_BrazilMember" name="BrazilMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_CallOptionForIndirectEquityPercentage" name="CallOptionForIndirectEquityPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CanadaMember" name="CanadaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CarriedForwardIndefinitelyMember" name="CarriedForwardIndefinitelyMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CommercialPaperZeroPointOnePercentage_Member" name="CommercialPaperZeroPointOnePercentage_Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ComponentsOfDecreaseIncreaseInNetLossActualAssetReturnDifferentFromExpectedReturn" name="ComponentsOfDecreaseIncreaseInNetLossActualAssetReturnDifferentFromExpectedReturn" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ComponentsOfDecreaseIncreaseInNetLossChangeInDiscountRate" name="ComponentsOfDecreaseIncreaseInNetLossChangeInDiscountRate" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ComponentsOfDecreaseIncreaseInNetLossEmployeeRelatedAssumptionChanges" name="ComponentsOfDecreaseIncreaseInNetLossEmployeeRelatedAssumptionChanges" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ComponentsOfDecreaseIncreaseInNetLossLiabilityRelatedExperienceDifferentFromAssumptions" name="ComponentsOfDecreaseIncreaseInNetLossLiabilityRelatedExperienceDifferentFromAssumptions" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ComponentsOfDecreaseIncreaseInNetLossOtherForeignCurrencyAdjustmentsAndOther" name="ComponentsOfDecreaseIncreaseInNetLossOtherForeignCurrencyAdjustmentsAndOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ContractsWithInsuranceCompaniesMember" name="ContractsWithInsuranceCompaniesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ContributionTypeAxis" name="ContributionTypeAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ContributionTypeDomain" name="ContributionTypeDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedMember" name="CorporateUnallocatedMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedNetImpactOfMarkToMarketOnCommodityHedgesMember" name="CorporateUnallocatedNetImpactOfMarkToMarketOnCommodityHedgesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedOtherMember" name="CorporateUnallocatedOtherMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedPensionLumpSumSettlementChargeAxis" name="CorporateUnallocatedPensionLumpSumSettlementChargeAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedPensionLumpSumSettlementChargeDomain" name="CorporateUnallocatedPensionLumpSumSettlementChargeDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedPensionLumpSumSettlementChargesDomain" name="CorporateUnallocatedPensionLumpSumSettlementChargesDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedRestructuringAndImpairmentChargesMember" name="CorporateUnallocatedRestructuringAndImpairmentChargesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CorporateUnallocatedVenezuelaCurrencyDevaluationMember" name="CorporateUnallocatedVenezuelaCurrencyDevaluationMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CurrencyCommingledFundsMember" name="CurrencyCommingledFundsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_CurrentMaturitiesOfLongTermDebtMember" name="CurrentMaturitiesOfLongTermDebtMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DebtObligationsAndCommitments" name="DebtObligationsAndCommitments" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DebtObligationsAndCommitmentsAbstract" name="DebtObligationsAndCommitmentsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DeductibleStateTaxAndInterestBenefits" name="DeductibleStateTaxAndInterestBenefits" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_DeferredIncomeTaxesAxis" name="DeferredIncomeTaxesAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DeferredIncomeTaxesDomain" name="DeferredIncomeTaxesDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DeferredMarketplaceSpending" name="DeferredMarketplaceSpending" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_DeferredTaxLiabilitiesCompensationandBenefitsPensions" name="DeferredTaxLiabilitiesCompensationandBenefitsPensions" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_DeferredTaxLiabilitiesDebtGuaranteeOfWhollyOwnedSubsidiary" name="DeferredTaxLiabilitiesDebtGuaranteeOfWhollyOwnedSubsidiary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_DeferredTaxesMember" name="DeferredTaxesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanAverageRemainingServicePeriodOfActivePlanParticipantsPensionExpense" name="DefinedBenefitPlanAverageRemainingServicePeriodOfActivePlanParticipantsPensionExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanAverageRemainingServicePeriodOfActivePlanParticipantsRetireeMedicalExpense" name="DefinedBenefitPlanAverageRemainingServicePeriodOfActivePlanParticipantsRetireeMedicalExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanExpectedReturnOnCertainAssetsComputationMovingAverageTerm" name="DefinedBenefitPlanExpectedReturnOnCertainAssetsComputationMovingAverageTerm" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanPeriodGross" name="DefinedBenefitPlanPeriodGross" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanRecognizedNetGainLossDueToSettlementsNetOfTax" name="DefinedBenefitPlanRecognizedNetGainLossDueToSettlementsNetOfTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanRecognizedNetGainLossDueToSettlementsNetOfTaxPerShare" name="DefinedBenefitPlanRecognizedNetGainLossDueToSettlementsNetOfTaxPerShare" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanSettlementsandCurtailmentsBenefitObligation" name="DefinedBenefitPlanSettlementsandCurtailmentsBenefitObligation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DefinedBenefitPlanSubsidiesExpectedPeriodAxis" name="DefinedBenefitPlanSubsidiesExpectedPeriodAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DefinedBenefitPlanSubsidiesExpectedPeriodDomain" name="DefinedBenefitPlanSubsidiesExpectedPeriodDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DefinedBenefitPlanTimeframeAxis" name="DefinedBenefitPlanTimeframeAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DefinedBenefitPlanTimeframeDomain" name="DefinedBenefitPlanTimeframeDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_DefinedBenefitPlanUnfundedPlanBenefitObligations" name="DefinedBenefitPlanUnfundedPlanBenefitObligations" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_DerivativesDesignatedAsCashFlowHedgingInstrumentsAssetsMember" name="DerivativesDesignatedAsCashFlowHedgingInstrumentsAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DerivativesDesignatedAsCashFlowHedgingInstrumentsLiabilitiesMember" name="DerivativesDesignatedAsCashFlowHedgingInstrumentsLiabilitiesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DerivativesDesignatedAsFairValueHedgingInstrumentsAssetsMember" name="DerivativesDesignatedAsFairValueHedgingInstrumentsAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DerivativesDesignatedAsFairValueHedgingInstrumentsLiabilitiesMember" name="DerivativesDesignatedAsFairValueHedgingInstrumentsLiabilitiesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DerivativesNotDesignatedAsHedgingInstrumentsAssetsMember" name="DerivativesNotDesignatedAsHedgingInstrumentsAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DerivativesNotDesignatedAsHedgingInstrumentsLiabilitiesMember" name="DerivativesNotDesignatedAsHedgingInstrumentsLiabilitiesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DiscretionaryMember" name="DiscretionaryMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DividendsAndInterestReceivableMember" name="DividendsAndInterestReceivableMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_DocumentAndEntityInformationAbstract" name="DocumentAndEntityInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_EquityAwardPayoutAxis" name="EquityAwardPayoutAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_EquityAwardPayoutDomain" name="EquityAwardPayoutDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_EsopMember" name="EsopMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ExpireBetween2And20YearsMember" name="ExpireBetween2And20YearsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_Expirein2015Member" name="Expirein2015Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_FairValueMeasurementwithUnobservableInputsReconciliationRecurringBasisAssetGainLoss" name="FairValueMeasurementwithUnobservableInputsReconciliationRecurringBasisAssetGainLoss" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_FairValueNondesignatedHedgesMember" name="FairValueNondesignatedHedgesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_FairValueStepUpOfDebtAcquiredInConnectionWithOurAcquisitions" name="FairValueStepUpOfDebtAcquiredInConnectionWithOurAcquisitions" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_FinancingActivitiesEffectOnDeferredTaxAssetBalance" name="FinancingActivitiesEffectOnDeferredTaxAssetBalance" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_FiveYearUnsecuredRevolvingCreditAgreementMember" name="FiveYearUnsecuredRevolvingCreditAgreementMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_FixedIncomeCommingledFundsMember" name="FixedIncomeCommingledFundsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_FourPointTwoFiveZeroPercentSeniorNotesDue2044Domain" name="FourPointTwoFiveZeroPercentSeniorNotesDue2044Domain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_FritoLayNorthAmericaMember" name="FritoLayNorthAmericaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_Gainlossonsaleofstockinsubsidiaryaftertaxpershare" name="Gainlossonsaleofstockinsubsidiaryaftertaxpershare" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_GoodwillAndIndefiniteLivedIntangibleAssetsAcquiredDivestedDuringPeriod" name="GoodwillAndIndefiniteLivedIntangibleAssetsAcquiredDivestedDuringPeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_GoodwillAndIndefiniteLivedIntangibleAssetsTranslationAndPurchaseAccountingAdjustments" name="GoodwillAndIndefiniteLivedIntangibleAssetsTranslationAndPurchaseAccountingAdjustments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_IncomeTaxCarryforwardsandAllowancesTextBlock" name="IncomeTaxCarryforwardsandAllowancesTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_IncreaseDecreaseInCarryingValueOfDebtInInterestRateFairValueHedge" name="IncreaseDecreaseInCarryingValueOfDebtInInterestRateFairValueHedge" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_IndirectEquityInterestPercentage" name="IndirectEquityInterestPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_IntangibleAssetsIncludingGoodwillRollForward" name="IntangibleAssetsIncludingGoodwillRollForward" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_InterestIncomeAndOther" name="InterestIncomeAndOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_InterestOnLongTermDebtDueAfterFiveYears" name="InterestOnLongTermDebtDueAfterFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_InterestOnLongTermDebtDueInFourAndFiveYears" name="InterestOnLongTermDebtDueInFourAndFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_InterestOnLongTermDebtDueInTwelveMonths" name="InterestOnLongTermDebtDueInTwelveMonths" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_InterestOnLongTermDebtDueInTwoAndThreeYears" name="InterestOnLongTermDebtDueInTwoAndThreeYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_InterestonLongtermDebtdue" name="InterestonLongtermDebtdue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_InternationalCommingledFundMember" name="InternationalCommingledFundMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_InternationalCommonStockMember" name="InternationalCommonStockMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_InternationalEquityAllocationMember" name="InternationalEquityAllocationMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_InternationalMember" name="InternationalMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_InternationalPlanAssetsMember" name="InternationalPlanAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_LargeCapFundsInUnitedStatesCommingledFundsMember" name="LargeCapFundsInUnitedStatesCommingledFundsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_LatinAmericaFoodsMember" name="LatinAmericaFoodsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_LongTermDebtPercentageUsingVariableInterestRate" name="LongTermDebtPercentageUsingVariableInterestRate" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_LongTermDebtTotalRepaymentsOfPrincipalAfterOneYear" name="LongTermDebtTotalRepaymentsOfPrincipalAfterOneYear" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_LongtermDebtMaturinginOneYearorLess" name="LongtermDebtMaturinginOneYearorLess" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_LowerLimitOfNetAccumulatedGainOrLoss" name="LowerLimitOfNetAccumulatedGainOrLoss" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_MarketingCommitments" name="MarketingCommitments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_MarketingObligationDueAfterFiveYears" name="MarketingObligationDueAfterFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_MarketingObligationDueInFourToFiveYears" name="MarketingObligationDueInFourToFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_MarketingObligationDueInNextTwelveMonths" name="MarketingObligationDueInNextTwelveMonths" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_MarketingObligationDueInTwoAndThreeYears" name="MarketingObligationDueInTwoAndThreeYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_MaximumAwardLevelDomain" name="MaximumAwardLevelDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_MergerAndIntegrationChargesAfterTax" name="MergerAndIntegrationChargesAfterTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_MergerAndIntegrationChargesImpactPerShareNetOfTaxes" name="MergerAndIntegrationChargesImpactPerShareNetOfTaxes" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_MergerAndIntegrationChargesStockBasedCompensation" name="MergerAndIntegrationChargesStockBasedCompensation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_MexicoMember" name="MexicoMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_MinimumAwardLevelDomain" name="MinimumAwardLevelDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_MinorityInterestIncreaseDecreaseFromContributionsFromOrDistributionsToNoncontrollingInterestMembers" name="MinorityInterestIncreaseDecreaseFromContributionsFromOrDistributionsToNoncontrollingInterestMembers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_NetAmountChargedToAllowanceForDoubtfulAccountsExpense" name="NetAmountChargedToAllowanceForDoubtfulAccountsExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_Netimpactofmortalityandotherchanges" name="Netimpactofmortalityandotherchanges" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_NonCurrentNotesAndAccountsReceivable" name="NonCurrentNotesAndAccountsReceivable" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_NonamortizableIntangibleAssets" name="NonamortizableIntangibleAssets" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_NoncashForeignExchangeLossRelatedToVenezuelaDevaluation" name="NoncashForeignExchangeLossRelatedToVenezuelaDevaluation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_Noncashtaxbenefit" name="Noncashtaxbenefit" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NondiscretionaryMember" name="NondiscretionaryMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2014Member" name="NotesDue2014Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2015Member" name="NotesDue2015Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2016Member" name="NotesDue2016Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2017Member" name="NotesDue2017Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2018MemberMember" name="NotesDue2018MemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2019MemberMember" name="NotesDue2019MemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2020to2044MemberMember" name="NotesDue2020to2044MemberMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2021Member" name="NotesDue2021Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2024Member" name="NotesDue2024Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_NotesDue2026Member" name="NotesDue2026Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OnePointSevenFiveZeroPercentSeniorNotesDue2021Member" name="OnePointSevenFiveZeroPercentSeniorNotesDue2021Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OpenTaxYearsMember" name="OpenTaxYearsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OtherBorrowingsShortTermMember" name="OtherBorrowingsShortTermMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherChangesDuringPeriodShares" name="OtherChangesDuringPeriodShares" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCIAfterTax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCIAfterTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCITax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCITax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCIbeforeTax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetPriorServiceCostCreditArisingDuringthePeriodandAmortizationAdjustmentfromAOCIbeforeTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCIAfterTax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCIAfterTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCITax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCITax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCIbeforeTax" name="OtherComprehensiveIncomeLossPensionandOtherPostretirementBenefitPlansNetUnamortizedGainLossArisingDuringthePeriodandReclassificationAdjustmentfromAOCIbeforeTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OtherComprehensiveIncomeLossReclassificationAdjustmentFromAociDerivativesQualifyingAsHedgesNetOfTaxAbstract" name="OtherComprehensiveIncomeLossReclassificationAdjustmentFromAociDerivativesQualifyingAsHedgesNetOfTaxAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeOtherBeforeTax" name="OtherComprehensiveIncomeOtherBeforeTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherComprehensiveIncomeOtherTax" name="OtherComprehensiveIncomeOtherTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OtherCostsMember" name="OtherCostsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OtherDebtInstrumentsdue2015to2019MemberDomainMember" name="OtherDebtInstrumentsdue2015to2019MemberDomainMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_OtherIdentifiableIntangiblesMember" name="OtherIdentifiableIntangiblesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherRestructuringCostsNetofTax" name="OtherRestructuringCostsNetofTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherRestructuringCostsNetofTaxPerShareAmount" name="OtherRestructuringCostsNetofTaxPerShareAmount" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OtherSignificantAccountingPoliciesPolicyTextBlock" name="OtherSignificantAccountingPoliciesPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_OutOfMoneyOptionsAverageExercisePrice" name="OutOfMoneyOptionsAverageExercisePrice" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsForDefinedBenefitPlanSettlement" name="PaymentsForDefinedBenefitPlanSettlement" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsForOtherInvestingActivities" name="PaymentsForOtherInvestingActivities" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsForRestructuringAndOther" name="PaymentsForRestructuringAndOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsToAcquireProductiveAssetsPercentage" name="PaymentsToAcquireProductiveAssetsPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsforProceedsfromShortTermInvestmentsMaturities" name="PaymentsforProceedsfromShortTermInvestmentsMaturities" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_PaymentsforrestructuringandotherchargesrelatedtoTingyi" name="PaymentsforrestructuringandotherchargesrelatedtoTingyi" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PbgAndPasAcquisitionMember" name="PbgAndPasAcquisitionMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PensionandRetireeMedicalPlanContributionsTableTextBlock" name="PensionandRetireeMedicalPlanContributionsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PepsiCoEquityPerformanceUnitDomain" name="PepsiCoEquityPerformanceUnitDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PepsicoAmericasBeveragesMember" name="PepsicoAmericasBeveragesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PepsicoAsiaMiddleEastAndAfricaMember" name="PepsicoAsiaMiddleEastAndAfricaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PercentOfEquityAwardsGrantedToCertainSeniorExecutives" name="PercentOfEquityAwardsGrantedToCertainSeniorExecutives" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PercentofLiabilityAwardsGrantedtoCertainSeniorExecutives" name="PercentofLiabilityAwardsGrantedtoCertainSeniorExecutives" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PerformanceStockUnitMember" name="PerformanceStockUnitMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PhantomUnitsGrantedUnderDirectorDeferralProgramSharesOutstanding" name="PhantomUnitsGrantedUnderDirectorDeferralProgramSharesOutstanding" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_PreferredStockCallPrice" name="PreferredStockCallPrice" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_PrepaidForwardDerivativeAssetFairValue" name="PrepaidForwardDerivativeAssetFairValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_PrepaidIncentives" name="PrepaidIncentives" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_PrescriptionDrugBenefitSubsidyIncomeTaxBenefit" name="PrescriptionDrugBenefitSubsidyIncomeTaxBenefit" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ProductivityPlanMember" name="ProductivityPlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_PropertyPlantAndEquipmentAndIntangibleAssetsAbstract" name="PropertyPlantAndEquipmentAndIntangibleAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_QuakerFoodsNorthAmericaMember" name="QuakerFoodsNorthAmericaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_QuarterlyFinancialInformationReportingCalendarPeriod" name="QuarterlyFinancialInformationReportingCalendarPeriod" nillable="true" substitutionGroup="xbrli:item" type="us-types:durationStringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ReacquiredFranchiseRightsMember" name="ReacquiredFranchiseRightsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ReclassificationfromAccumulatedOtherComprehensiveLosstotheCondensedConsolidatedStatementofIncomeAbstract" name="ReclassificationfromAccumulatedOtherComprehensiveLosstotheCondensedConsolidatedStatementofIncomeAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_RepresentationAsPercentageOfTotalUsPlanAssets" name="RepresentationAsPercentageOfTotalUsPlanAssets" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_ReservesForFederalStateAndForeignJurisdictionsTextBlock" name="ReservesForFederalStateAndForeignJurisdictionsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ReservesForIncomeTaxes" name="ReservesForIncomeTaxes" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_RestructuringSettlementAndImpairmentProvisionsNetOfTax" name="RestructuringSettlementAndImpairmentProvisionsNetOfTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_RestructuringSettlementAndImpairmentProvisionsNetOfTaxPerShareAmount" name="RestructuringSettlementAndImpairmentProvisionsNetOfTaxPerShareAmount" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_RestructuringSettlementAndImpairmentProvisionsShareBasedCompensation" name="RestructuringSettlementAndImpairmentProvisionsShareBasedCompensation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RetireeMedicalPlanMember" name="RetireeMedicalPlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RevenueAxisAxis" name="RevenueAxisAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RevenueAxisDomain" name="RevenueAxisDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RevenueNetMember" name="RevenueNetMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RevenueOutsideU.S.Domain" name="RevenueOutsideU.S.Domain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_RussiaMember" name="RussiaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SalesIncentivesAndOtherMarketplaceSpendingPolicyPolicyTextBlock" name="SalesIncentivesAndOtherMarketplaceSpendingPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfChangeInBookValueOfNonAmortizableIntangibleAssetsTableTextBlock" name="ScheduleOfChangeInBookValueOfNonAmortizableIntangibleAssetsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfIncomeTaxesTableTextBlock" name="ScheduleOfIncomeTaxesTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfLongTermContractualCommitmentsTableTextBlock" name="ScheduleOfLongTermContractualCommitmentsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfOtherStockBasedCompensationDataTableTextBlock" name="ScheduleOfOtherStockBasedCompensationDataTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfOtherSupplementalInformationTableTextBlock" name="ScheduleOfOtherSupplementalInformationTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfPlanAssetsMeasuredAtFairValueTableTextBlock" name="ScheduleOfPlanAssetsMeasuredAtFairValueTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfPreferredStockTableTextBlock" name="ScheduleOfPreferredStockTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfQuarterlyReportingTableTextBlock" name="ScheduleOfQuarterlyReportingTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfSegmentReportingInformationByAmortizationOfIntangibleAssetsAndDepreciationAndOtherAmortizationTableTextBlock" name="ScheduleOfSegmentReportingInformationByAmortizationOfIntangibleAssetsAndDepreciationAndOtherAmortizationTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfSegmentReportingInformationByNetRevenueAndLongLivedAssetsTableTextBlock" name="ScheduleOfSegmentReportingInformationByNetRevenueAndLongLivedAssetsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleOfSegmentReportingInformationByTotalAssetsAndCapitalSpendingTableTextBlock" name="ScheduleOfSegmentReportingInformationByTotalAssetsAndCapitalSpendingTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleofAccountsandNotesReceivablesandInventoriesTableTextBlockTableTextBlock" name="ScheduleofAccountsandNotesReceivablesandInventoriesTableTextBlockTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ScheduleofAccumulatedandProjectedBenefitObligationsinExcessofFairValueofPlanAssetsTableTextBlock" name="ScheduleofAccumulatedandProjectedBenefitObligationsinExcessofFairValueofPlanAssetsTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SegmentReportingInformationAssetsPercentage" name="SegmentReportingInformationAssetsPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SegmentReportingInformationLongLivedAssetsPercentage" name="SegmentReportingInformationLongLivedAssetsPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SegmentReportingInformationOperatingIncomeLossPercentage" name="SegmentReportingInformationOperatingIncomeLossPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SegmentReportingInformationSalesRevenueNetPercentage" name="SegmentReportingInformationSalesRevenueNetPercentage" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SettlementCurtailmentReclassificationsfromAOCI" name="SettlementCurtailmentReclassificationsfromAOCI" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardEquivalenceRatioOfStockOptionsToRsus" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardEquivalenceRatioOfStockOptionsToRsus" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardPerformancePeriod" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardPerformancePeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsConversionsInPeriodIntrinsicValue" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsConversionsInPeriodIntrinsicValue" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsConvertedTotalIntrinsicValue" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsConvertedTotalIntrinsicValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestAggregateIntrinsicValue" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestAggregateIntrinsicValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestIntrinsicValue" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestIntrinsicValue" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestOutstandingNumber" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestOutstandingNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestWeightedAverageRemainingContractualTerm" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsExpectedToVestWeightedAverageRemainingContractualTerm" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsOutstandingAggregateIntrinsicValue" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsOutstandingAggregateIntrinsicValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_ShareBasedCompensationArrangementbyShareBasedPaymentAwardEquityInstrumentsOtherthanOptionsPerformanceAssumptionChangeIntrinsicValueAmountperShare" name="ShareBasedCompensationArrangementbyShareBasedPaymentAwardEquityInstrumentsOtherthanOptionsPerformanceAssumptionChangeIntrinsicValueAmountperShare" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_ShareBasedCompensationPercentageAllocationbyDivision" name="ShareBasedCompensationPercentageAllocationbyDivision" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SharebasedCompensationArrangementbyShareBasedPaymentAwardEquityinstrumentsotherthanoptionsPerformanceAssumptionAdjustmentShares" name="SharebasedCompensationArrangementbyShareBasedPaymentAwardEquityinstrumentsotherthanoptionsPerformanceAssumptionAdjustmentShares" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SharebasedCompensationArrangementbyShareBasedPaymentAwardEquityinstrumentsotherthanoptionsPerformanceAssumptionAdjustmentSharesOutstanding" name="SharebasedCompensationArrangementbyShareBasedPaymentAwardEquityinstrumentsotherthanoptionsPerformanceAssumptionAdjustmentSharesOutstanding" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="pep_StockOptionsExercisesRSUsPSUSPepunitsConverted" name="StockOptionsExercisesRSUsPSUSPepunitsConverted" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_SubTotalInternationalPlanAssetsMember" name="SubTotalInternationalPlanAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_SubTotalUSPlanAssetsMember" name="SubTotalUSPlanAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_SubsidiaryVietnamBottlingOperationsMember" name="SubsidiaryVietnamBottlingOperationsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SubsidiesExpectedToBeReceivedFromTwoThousandAndThreeMedicareAct" name="SubsidiesExpectedToBeReceivedFromTwoThousandAndThreeMedicareAct" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="pep_SummaryOf2014ProductivityPlanActivityTableTextBlockTableTextBlock" name="SummaryOf2014ProductivityPlanActivityTableTextBlockTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_SummaryOfProductivityPlanActivityTableTextBlock" name="SummaryOfProductivityPlanActivityTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_SupplementalFinancialInformationAbstract" name="SupplementalFinancialInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TargetAssetAllocationLineItems" name="TargetAssetAllocationLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TargetAssetAllocationTable" name="TargetAssetAllocationTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TargetAwardLevelDomainDomain" name="TargetAwardLevelDomainDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TaxSettlementYears20032009Member" name="TaxSettlementYears20032009Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ThreePointSixZeroPercentSeniorNotesDue2024Member" name="ThreePointSixZeroPercentSeniorNotesDue2024Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TingyiMember" name="TingyiMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TopFiveInternationalCountriesDomain" name="TopFiveInternationalCountriesDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TotalCapitalSpendingMember" name="TotalCapitalSpendingMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TotalDivisionMember" name="TotalDivisionMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_TotalFinancialAssetsAtFairValue" name="TotalFinancialAssetsAtFairValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalFinancialLiabilitiesAtFairValue" name="TotalFinancialLiabilitiesAtFairValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalLongTermContractualCommitments" name="TotalLongTermContractualCommitments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalLongTermContractualCommitmentsDueAfterFiveYears" name="TotalLongTermContractualCommitmentsDueAfterFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalLongTermContractualCommitmentsDueCurrent" name="TotalLongTermContractualCommitmentsDueCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalLongTermContractualCommitmentsDueInFourAndFiveYears" name="TotalLongTermContractualCommitmentsDueInFourAndFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TotalLongTermContractualCommitmentsDueInTwoAndThreeYears" name="TotalLongTermContractualCommitmentsDueInTwoAndThreeYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TradeAccountsReceivableGross" name="TradeAccountsReceivableGross" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="pep_TranslationAndOther" name="TranslationAndOther" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TwoPointSixTwoFivePercentSeniorNotesDue2026_Member" name="TwoPointSixTwoFivePercentSeniorNotesDue2026_Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_TwoThousandTwentyFiveAndThereafterMember" name="TwoThousandTwentyFiveAndThereafterMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_USCommingledFundsMember" name="USCommingledFundsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_USCommonStockMember" name="USCommonStockMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_USEquityAllocationMember" name="USEquityAllocationMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_USPlanAssetsMember" name="USPlanAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_UndistributedInternationalEarningsTextBlock" name="UndistributedInternationalEarningsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_UnitedKingdomMember" name="UnitedKingdomMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_UnitedStatesAndCanadaMember" name="UnitedStatesAndCanadaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_UnitedStatesMember" name="UnitedStatesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_UnitedStatesSavingsPlanMember" name="UnitedStatesSavingsPlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="pep_UnrecordedUnconditionalPurchaseObligationDueInYearsFourAndFive" name="UnrecordedUnconditionalPurchaseObligationDueInYearsFourAndFive" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_UnrecordedUnconditionalPurchaseObligationDueInYearsTwoAndThree" name="UnrecordedUnconditionalPurchaseObligationDueInYearsTwoAndThree" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="pep_ValuationAllowanceBenefitProvision" name="ValuationAllowanceBenefitProvision" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="pep_WalMartMember" name="WalMartMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_Years1Through5Member" name="Years1Through5Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_Years6Through10Member" name="Years6Through10Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="pep_ZeroPointNineFiveZeroPercentSeniorNotesDue2017Domain" name="ZeroPointNineFiveZeroPercentSeniorNotesDue2017Domain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+</xsd:schema>
