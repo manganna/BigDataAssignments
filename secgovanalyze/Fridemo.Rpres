@@ -334,48 +334,23 @@ pepIncomeStatement$pep_Venezuelaimpairmentcharges
 
 Visualizing Cash Flow!
 ========================================================
-This dataset highlights how the money is used in Amazon.
+This dataset highlights how the money is used in Pepsi.
 
 ```{r}
-aaplCashflow_simple <- expose( aaplCashFlow,
-`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations',
-`Investing` = 'NetCashProvidedByUsedInInvestingActivitiesContinuingOperations',
-`Financing` = 'NetCashProvidedByUsedInFinancingActivitiesContinuingOperations'
-)
-print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+pepCashflow_simple <- expose( pepCashFlow)
+print(pepCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 ```
 
-`Inference: Apple has reduced the amount spent in Ops which is a good thing, indicating that a lot of automation is happening inside the company to reduce this cost. Apple has varied it's amount of investing in other avenues. Apple also earns a tiny amount from a lot of it's patents as shown in the last column.`
+`Inference: Pepsi has not been able to minimise it's expenditure on Ops Activities. Perhaps if Pepsi focus on reducing this, it can generate more profits.`
 
 
-Visualizing Balance Sheet!
-========================================================
-
-This dataset highlights core components of Balance sheet of Apple
-```{r}
-
-aaplBalanceSheet_simple<- expose( aaplBalanceSheet,
-# Assets
-`Current Assets` = "AssetsCurrent",
-`Noncurrent Assets` = other("Assets"),
-# Liabilites and equity
-`Current Liabilities` = "LiabilitiesCurrent",
-`Noncurrent Liabilities` = other(c("Liabilities", "CommitmentsAndContingencies")),
-`Stockholders Equity` = "StockholdersEquity"
-)
-
-print(aaplBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
-
-```
 
 Visualizing in detail
 ========================================================
 
-```{r}
-plot_double_stacked_bar(aaplBalanceSheet_simple)
-plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
 
-```
+![picture of spaghetti](pep/pepIncome.png)
+![picture of spaghetti](pep/pepProp.png)
 
 

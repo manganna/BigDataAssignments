@@ -703,16 +703,12 @@ pepIncomeStatement$pep_Venezuelaimpairmentcharges
 
 Visualizing Cash Flow!
 ========================================================
-This dataset highlights how the money is used in Amazon.
+This dataset highlights how the money is used in Pepsi.
 
 
 ```r
-aaplCashflow_simple <- expose( aaplCashFlow,
-`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations',
-`Investing` = 'NetCashProvidedByUsedInInvestingActivitiesContinuingOperations',
-`Financing` = 'NetCashProvidedByUsedInFinancingActivitiesContinuingOperations'
-)
-print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+pepCashflow_simple <- expose( pepCashFlow)
+print(pepCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 ```
 
 <table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
@@ -727,127 +723,38 @@ print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 </thead>
 <tbody>
 <tr>
-<td style='text-align: left;'><strong>Cash and Cash Equivalents, Period Increase (Decrease)</strong></td>
-<td style='text-align: right;'><strong>  7,276</strong></td>
-<td style='text-align: right;'><strong>   -415</strong></td>
-<td style='text-align: right;'><strong>  3,513</strong></td>
-<td style='text-align: right;'><strong>    931</strong></td>
+<td style='text-align: left;'>Net Cash Provided by (Used in) Investing Activities</td>
+<td style='text-align: right;'>-35.69</td>
+<td style='text-align: right;'>-49.37</td>
+<td style='text-align: right;'>-26.25</td>
+<td style='text-align: right;'>-30.05</td>
 </tr>
 <tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Ops Activities</td>
-<td style='text-align: right;'>-25,522</td>
-<td style='text-align: right;'>-19,307</td>
-<td style='text-align: right;'>-20,408</td>
-<td style='text-align: right;'>-32,610</td>
+<td style='text-align: left;'>Net Cash Provided by (Used in) Financing Activities</td>
+<td style='text-align: right;'>-38.28</td>
+<td style='text-align: right;'>-82.64</td>
+<td style='text-align: right;'>-37.89</td>
+<td style='text-align: right;'>-33.06</td>
 </tr>
 <tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Investing</td>
-<td style='text-align: right;'>-56,274</td>
-<td style='text-align: right;'>-22,579</td>
-<td style='text-align: right;'>-33,774</td>
-<td style='text-align: right;'>-48,227</td>
-</tr>
-<tr>
-<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;Financing</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>-17,716</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>-37,549</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>-16,379</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'> -1,698</td>
+<td style='border-bottom: 2px solid grey; text-align: left;'>Net Cash Provided by (Used in) Operating Activities</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>105.80</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>105.06</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 96.88</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 84.79</td>
 </tr>
 </tbody>
 </table>
 
-`Inference: Apple has reduced the amount spent in Ops which is a good thing, indicating that a lot of automation is happening inside the company to reduce this cost. Apple has varied it's amount of investing in other avenues. Apple also earns a tiny amount from a lot of it's patents as shown in the last column.`
+`Inference: Pepsi has not been able to minimise it's expenditure on Ops Activities. Perhaps if Pepsi focus on reducing this, it can generate more profits.`
 
 
-Visualizing Balance Sheet!
-========================================================
-
-This dataset highlights core components of Balance sheet of Apple
-
-```r
-aaplBalanceSheet_simple<- expose( aaplBalanceSheet,
-# Assets
-`Current Assets` = "AssetsCurrent",
-`Noncurrent Assets` = other("Assets"),
-# Liabilites and equity
-`Current Liabilities` = "LiabilitiesCurrent",
-`Noncurrent Liabilities` = other(c("Liabilities", "CommitmentsAndContingencies")),
-`Stockholders Equity` = "StockholdersEquity"
-)
-
-print(aaplBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
-```
-
-<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
-<thead>
-<tr>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style='text-align: left;'><strong>Assets</strong></td>
-<td style='text-align: right;'><strong>290,479</strong></td>
-<td style='text-align: right;'><strong>231,839</strong></td>
-<td style='text-align: right;'><strong>207,000</strong></td>
-</tr>
-<tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Assets</td>
-<td style='text-align: right;'> 89,378</td>
-<td style='text-align: right;'> 68,531</td>
-<td style='text-align: right;'> 73,286</td>
-</tr>
-<tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Assets</td>
-<td style='text-align: right;'>201,101</td>
-<td style='text-align: right;'>163,308</td>
-<td style='text-align: right;'>133,714</td>
-</tr>
-<tr>
-<td style='text-align: left;'><strong>Liabilities and Equity</strong></td>
-<td style='text-align: right;'><strong>290,479</strong></td>
-<td style='text-align: right;'><strong>231,839</strong></td>
-<td style='text-align: right;'><strong>207,000</strong></td>
-</tr>
-<tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Liabilities</td>
-<td style='text-align: right;'> 80,610</td>
-<td style='text-align: right;'> 63,448</td>
-<td style='text-align: right;'> 43,658</td>
-</tr>
-<tr>
-<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Liabilities</td>
-<td style='text-align: right;'> 90,514</td>
-<td style='text-align: right;'> 56,844</td>
-<td style='text-align: right;'> 39,793</td>
-</tr>
-<tr>
-<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;Stockholders Equity</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>119,355</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>111,547</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>123,549</td>
-</tr>
-</tbody>
-</table>
 
 Visualizing in detail
 ========================================================
 
 
-```r
-plot_double_stacked_bar(aaplBalanceSheet_simple)
-```
-
-![plot of chunk unnamed-chunk-22](Fridemo-figure/unnamed-chunk-22-1.png)
-
-```r
-plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
-```
-
-![plot of chunk unnamed-chunk-22](Fridemo-figure/unnamed-chunk-22-2.png)
+![picture of spaghetti](pep/pepIncome.png)
+![picture of spaghetti](pep/pepProp.png)
 
 
