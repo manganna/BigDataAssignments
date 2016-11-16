@@ -12,8 +12,7 @@ List of Companies
 - $AMZN (Amazon)
 - $AAPL (Apple)
 - $PEP (Pepsi)
-- $FB (Facebook)
-- $GM (General Motors)
+- $NFLX (Netflix)
 
 Setting up things
 ========================================================
@@ -757,42 +756,42 @@ Visualizing in detail
 ![picture of spaghetti](pep/pepIncome.png)
 ![picture of spaghetti](pep/pepProp.png)
 
-Analyzing Amazon
+Analyzing Netflix
 ========================================================
 
 
 ```r
-#AMZN forms
-amzn_url2015<-'http://localhost:8000/amzn/2015/amzn-20141231.xml'
-amzn_url2016<- 'http://localhost:8000/amzn/2016/amzn-20151231.xml'
+#NFLX forms
+nflx_url2015<-'http://localhost:8000/nflx/2015/nflx-20131231.xml'
+nflx_url2016<- 'http://localhost:8000/nflx/2016/nflx-20141231.xml'
 old_o <- options(stringsAsFactors = FALSE)
-amzn_2015 <- xbrlDoAll(amzn_url2015)
-amzn_2016 <- xbrlDoAll(amzn_url2016)
+nflx_2015 <- xbrlDoAll(nflx_url2015)
+nflx_2016 <- xbrlDoAll(nflx_url2016)
 options(old_o)
-amzn2015 <- xbrl_get_statements(amzn_2015)
-amzn2016 <- xbrl_get_statements(amzn_2016)
+nflx2015 <- xbrl_get_statements(nflx_2015)
+nflx2016 <- xbrl_get_statements(nflx_2016)
 ```
 
-Amazon 10K in 2015
+Netflix 10K in 2015
 ========================================================
 
-![picture of spaghetti](amzn/amzn2015.png)
+![picture of spaghetti](nflx/nflx2015.png)
 
-## Amazon 10K in 2016
+## Netflix 10K in 2016
 
-![picture of spaghetti](amzn/amzn2016.png)
+![picture of spaghetti](nflx/nflx2016.png)
 
 Merge the result!
 ========================================================
 
 
 ```r
-amzn <- merge(amzn2015,amzn2016)
-amznSOP <- merge(amzn2015$ConsolidatedStatementsOfOperations,amzn2016$ConsolidatedStatementsOfOperations)
-amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
-amznCashflow <- merge(amzn2015$ConsolidatedStatementsOfCashFlows,amzn2016$ConsolidatedStatementsOfCashFlows)
+nflx <- merge(nflx2015,nflx2016)
+nflxSOP <- merge(nflx2015$ConsolidatedStatementsOfOperations,nflx2016$ConsolidatedStatementsOfOperations)
+nflxBalanceSheet<- merge(nflx2015$ConsolidatedBalanceSheets,nflx2016$ConsolidatedBalanceSheets)
+nflxCashflow <- merge(nflx2015$ConsolidatedStatementsOfCashFlows,nflx2016$ConsolidatedStatementsOfCashFlows)
 ```
-![picture of spaghetti](amzn/amazonbs.png)
+![picture of spaghetti](nflx/nflxbs.png)
 
 Financial ratios!
 ========================================================
@@ -801,7 +800,7 @@ It's the ratio of current assests / current liabilities.
 
 
 ```r
-amznBalanceSheet %>% transmute(
+nflxBalanceSheet %>% transmute(
   date = endDate, 
   CurrentRatio = AssetsCurrent / LiabilitiesCurrent
 )
@@ -809,146 +808,148 @@ amznBalanceSheet %>% transmute(
 
 ```
         date CurrentRatio
-1 2013-12-31     1.071584
-2 2014-12-31     1.115276
-3 2015-12-31     1.075961
+1 2012-12-31     1.337047
+2 2013-12-31     1.419905
+3 2014-12-31     1.479625
 ```
 
-`Inference : Amazon consistently had a ratio of 1.0 or greater which indicates that Amazon possesed more assets than liablities, which is a good sign for company's growth.`
+`Inference : Netflix consistently had a ratio of 1.0 or greater which indicates that Netflix possesed more assets than liablities, which is a good sign for company's growth.`
 
 Visualize Revenue and Expenditure!
 ========================================================
 Consolidated Statement of Operations.
-This dataset highlights the Revenue earned by Amazon v/s amount spent in activities like 
-`marketing`, `admnistration expense`, `cost of goods and services sold`, `amazon fulfillment expense` and other `ops costs`.
+This dataset highlights the Revenue earned by Netflix v/s amount spent in activities like 
+`marketing`, `admnistration expense` and other `ops costs`.
 
 
 ```r
-amznSOP_simple <- expose( amznSOP,
-`Revenue` = 'SalesRevenueNet',
-`Expenditure` = 'CostsAndExpenses'
+nflxSOP_simple <- expose( nflxSOP,
+`Revenue` = 'Revenues',
+`Expenditure` = 'NonoperatingIncomeExpense'
 )
 
-print(amznSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 ```
 
 <table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
 <thead>
 <tr>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2011</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style='text-align: left;'><strong>Net Income (Loss) Attributable to Parent</strong></td>
-<td style='text-align: right;'><strong>     596</strong></td>
-<td style='text-align: right;'><strong>   -241</strong></td>
-<td style='text-align: right;'><strong>    274</strong></td>
-<td style='text-align: right;'><strong>    -39</strong></td>
+<td style='text-align: right;'><strong>  2,667.99</strong></td>
+<td style='text-align: right;'><strong>  1,124.03</strong></td>
+<td style='text-align: right;'><strong>    171.52</strong></td>
+<td style='text-align: right;'><strong>  2,261.26</strong></td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Revenue</td>
-<td style='text-align: right;'> 107,006</td>
-<td style='text-align: right;'> 88,988</td>
-<td style='text-align: right;'> 74,452</td>
-<td style='text-align: right;'> 61,093</td>
+<td style='text-align: right;'> 55,046.56</td>
+<td style='text-align: right;'> 43,745.62</td>
+<td style='text-align: right;'> 36,092.82</td>
+<td style='text-align: right;'> 32,045.77</td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Expenditure</td>
-<td style='text-align: right;'>-104,773</td>
-<td style='text-align: right;'>-88,810</td>
-<td style='text-align: right;'>-73,707</td>
-<td style='text-align: right;'>-60,417</td>
+<td style='text-align: right;'>    -30.60</td>
+<td style='text-align: right;'>    -30.02</td>
+<td style='text-align: right;'>      4.74</td>
+<td style='text-align: right;'>     34.79</td>
 </tr>
 <tr>
 <td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherNetIncomeLoss_</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>  -1,637</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>   -419</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>   -471</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>   -715</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-52,347.97</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-42,591.57</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-35,926.04</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-29,819.30</td>
 </tr>
 </tbody>
 </table>
 
-`Inference: Amazon as a company is increasing it's revenue every year, but this is only possible with greater expenditure. `
-`Bottomline: More the expenditure more is the revenue`
+`Inference: Netflix as a company is increasing it's revenue every year, and the highlight is that expenditure hasn't increased significantly.`
+
+`Bottomline: Netflix being purely an internet company, has the advantage of controlling the`
+`expenditure while growing to lot of users and thus generating more revenue.`
 
 Visualizing Cash Flow!
 ========================================================
-This dataset highlights how the money is used in Amazon.
+This dataset highlights how the money is used in Netflix.
 
 
 ```r
-amznCashflow_simple <- expose( amznCashflow,
+nflxCashflow_simple <- expose( nflxCashflow,
 `Ops Activities` = 'NetCashProvidedByUsedInOperatingActivities',
 `Investing` = 'NetCashProvidedByUsedInInvestingActivities',
 `Financing` = 'NetCashProvidedByUsedInFinancingActivities'
 )
-print(amznCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 ```
 
 <table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
 <thead>
 <tr>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2011</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style='text-align: left;'><strong>Cash and Cash Equivalents, Period Increase (Decrease)</strong></td>
-<td style='text-align: right;'><strong> 1,333</strong></td>
-<td style='text-align: right;'><strong> 5,899</strong></td>
-<td style='text-align: right;'><strong>   574</strong></td>
-<td style='text-align: right;'><strong> 2,815</strong></td>
+<td style='text-align: right;'><strong> 5,086.43</strong></td>
+<td style='text-align: right;'><strong> 3,146.74</strong></td>
+<td style='text-align: right;'><strong>-2,177.62</strong></td>
+<td style='text-align: right;'><strong> 3,135.54</strong></td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Ops Activities</td>
-<td style='text-align: right;'>10,728</td>
-<td style='text-align: right;'> 7,324</td>
-<td style='text-align: right;'> 4,927</td>
-<td style='text-align: right;'> 4,258</td>
+<td style='text-align: right;'>-5,171.15</td>
+<td style='text-align: right;'>-1,269.75</td>
+<td style='text-align: right;'>  -127.18</td>
+<td style='text-align: right;'>-1,345.40</td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Investing</td>
-<td style='text-align: right;'>-6,450</td>
-<td style='text-align: right;'>-7,607</td>
-<td style='text-align: right;'>-7,102</td>
-<td style='text-align: right;'>-3,595</td>
+<td style='text-align: right;'>  -428.66</td>
+<td style='text-align: right;'>-2,559.68</td>
+<td style='text-align: right;'>-2,447.40</td>
+<td style='text-align: right;'>-2,658.14</td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Financing</td>
-<td style='text-align: right;'>-3,763</td>
-<td style='text-align: right;'> 4,432</td>
-<td style='text-align: right;'>  -539</td>
-<td style='text-align: right;'> 2,259</td>
+<td style='text-align: right;'> 5,417.12</td>
+<td style='text-align: right;'> 4,762.64</td>
+<td style='text-align: right;'>    55.89</td>
+<td style='text-align: right;'> 2,616.56</td>
 </tr>
 <tr>
 <td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherCashAndCashEquivalentsPeriodIncreaseDecrease_</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>  -374</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>  -310</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>   -86</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>   -29</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>   -66.86</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>   -34.53</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>    -1.97</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>     0.00</td>
 </tr>
 </tbody>
 </table>
 
-`Inference: Amazon spends most of the money in Day to day operational activities, but invests some money in acquiring property plant, equipment, business interests, marketable services`
+`Inference: Netflix spends most of the money in Day to day operational activities, but invests some money in acquiring content library, additions to streaming content and payment of equipments like servers.`
 
 Visualizing Balance Sheet!
 ========================================================
 
-This dataset highlights core components of Balance sheet of Amazon
+This dataset highlights core components of Balance sheet of Netflix
 
 ```r
-amznBalanceSheet_simple<- expose( amznBalanceSheet,
+nflxBalanceSheet_simple<- expose( nflxBalanceSheet,
 # Assets
 `Current Assets` = "AssetsCurrent",
 `Noncurrent Assets` = other("Assets"),
@@ -956,60 +957,60 @@ amznBalanceSheet_simple<- expose( amznBalanceSheet,
 `Current Liabilities` = "LiabilitiesCurrent",
 `Stockholders Equity` = "StockholdersEquity"
 )
-print(amznBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 ```
 
 <table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
 <thead>
 <tr>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
 <th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style='text-align: left;'><strong>Assets</strong></td>
-<td style='text-align: right;'><strong>654.44</strong></td>
-<td style='text-align: right;'><strong>545.05</strong></td>
-<td style='text-align: right;'><strong>401.59</strong></td>
+<td style='text-align: right;'><strong>70,566.51</strong></td>
+<td style='text-align: right;'><strong>54,125.63</strong></td>
+<td style='text-align: right;'><strong>39,678.90</strong></td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Assets</td>
-<td style='text-align: right;'>364.74</td>
-<td style='text-align: right;'>313.27</td>
-<td style='text-align: right;'>246.25</td>
+<td style='text-align: right;'>39,404.69</td>
+<td style='text-align: right;'>30,587.63</td>
+<td style='text-align: right;'>22,407.91</td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Assets</td>
-<td style='text-align: right;'>289.70</td>
-<td style='text-align: right;'>231.78</td>
-<td style='text-align: right;'>155.34</td>
+<td style='text-align: right;'>31,161.82</td>
+<td style='text-align: right;'>23,538.00</td>
+<td style='text-align: right;'>17,270.99</td>
 </tr>
 <tr>
 <td style='text-align: left;'><strong>Liabilities and Equity</strong></td>
-<td style='text-align: right;'><strong>654.44</strong></td>
-<td style='text-align: right;'><strong>545.05</strong></td>
-<td style='text-align: right;'><strong>401.59</strong></td>
+<td style='text-align: right;'><strong>70,566.51</strong></td>
+<td style='text-align: right;'><strong>54,125.63</strong></td>
+<td style='text-align: right;'><strong>39,678.90</strong></td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Liabilities</td>
-<td style='text-align: right;'>338.99</td>
-<td style='text-align: right;'>280.89</td>
-<td style='text-align: right;'>229.80</td>
+<td style='text-align: right;'>26,631.54</td>
+<td style='text-align: right;'>21,542.03</td>
+<td style='text-align: right;'>16,759.26</td>
 </tr>
 <tr>
 <td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Stockholders Equity</td>
-<td style='text-align: right;'>133.84</td>
-<td style='text-align: right;'>107.41</td>
-<td style='text-align: right;'> 97.46</td>
+<td style='text-align: right;'>18,577.08</td>
+<td style='text-align: right;'>13,335.61</td>
+<td style='text-align: right;'> 7,446.73</td>
 </tr>
 <tr>
 <td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherLiabilitiesAndStockholdersEquity_</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>181.61</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'>156.75</td>
-<td style='border-bottom: 2px solid grey; text-align: right;'> 74.33</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>25,357.89</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>19,247.99</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>15,472.91</td>
 </tr>
 </tbody>
 </table>
@@ -1019,13 +1020,13 @@ Visualizing in detail
 
 
 ```r
-plot_double_stacked_bar(amznBalanceSheet_simple)
+plot_double_stacked_bar(nflxBalanceSheet_simple)
 ```
 
 ![plot of chunk unnamed-chunk-27](Fridemo-figure/unnamed-chunk-27-1.png)
 
 ```r
-plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
+plot_double_stacked_bar(proportional(nflxBalanceSheet_simple))
 ```
 
 ![plot of chunk unnamed-chunk-27](Fridemo-figure/unnamed-chunk-27-2.png)

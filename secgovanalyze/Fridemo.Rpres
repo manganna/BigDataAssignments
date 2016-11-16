@@ -12,8 +12,7 @@ List of Companies
 - $AMZN (Amazon)
 - $AAPL (Apple)
 - $PEP (Pepsi)
-- $FB (Facebook)
-- $GM (General Motors)
+- $NFLX (Netflix)
 
 Setting up things
 ========================================================
@@ -353,43 +352,43 @@ Visualizing in detail
 ![picture of spaghetti](pep/pepIncome.png)
 ![picture of spaghetti](pep/pepProp.png)
 
-Analyzing Amazon
+Analyzing Netflix
 ========================================================
 
 ```{r}
-#AMZN forms
-amzn_url2015<-'http://localhost:8000/amzn/2015/amzn-20141231.xml'
-amzn_url2016<- 'http://localhost:8000/amzn/2016/amzn-20151231.xml'
+#NFLX forms
+nflx_url2015<-'http://localhost:8000/nflx/2015/nflx-20131231.xml'
+nflx_url2016<- 'http://localhost:8000/nflx/2016/nflx-20141231.xml'
 old_o <- options(stringsAsFactors = FALSE)
-amzn_2015 <- xbrlDoAll(amzn_url2015)
-amzn_2016 <- xbrlDoAll(amzn_url2016)
+nflx_2015 <- xbrlDoAll(nflx_url2015)
+nflx_2016 <- xbrlDoAll(nflx_url2016)
 options(old_o)
-amzn2015 <- xbrl_get_statements(amzn_2015)
-amzn2016 <- xbrl_get_statements(amzn_2016)
+nflx2015 <- xbrl_get_statements(nflx_2015)
+nflx2016 <- xbrl_get_statements(nflx_2016)
 
 ```
 
-Amazon 10K in 2015
+Netflix 10K in 2015
 ========================================================
 
-![picture of spaghetti](amzn/amzn2015.png)
+![picture of spaghetti](nflx/nflx2015.png)
 
-## Amazon 10K in 2016
+## Netflix 10K in 2016
 
-![picture of spaghetti](amzn/amzn2016.png)
+![picture of spaghetti](nflx/nflx2016.png)
 
 Merge the result!
 ========================================================
 
 ```{r}
-amzn <- merge(amzn2015,amzn2016)
-amznSOP <- merge(amzn2015$ConsolidatedStatementsOfOperations,amzn2016$ConsolidatedStatementsOfOperations)
-amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
-amznCashflow <- merge(amzn2015$ConsolidatedStatementsOfCashFlows,amzn2016$ConsolidatedStatementsOfCashFlows)
+nflx <- merge(nflx2015,nflx2016)
+nflxSOP <- merge(nflx2015$ConsolidatedStatementsOfOperations,nflx2016$ConsolidatedStatementsOfOperations)
+nflxBalanceSheet<- merge(nflx2015$ConsolidatedBalanceSheets,nflx2016$ConsolidatedBalanceSheets)
+nflxCashflow <- merge(nflx2015$ConsolidatedStatementsOfCashFlows,nflx2016$ConsolidatedStatementsOfCashFlows)
 
 
 ```
-![picture of spaghetti](amzn/amazonbs.png)
+![picture of spaghetti](nflx/nflxbs.png)
 
 Financial ratios!
 ========================================================
@@ -397,57 +396,59 @@ It's the ratio of current assests / current liabilities.
 
 
 ```{r}
-amznBalanceSheet %>% transmute(
+nflxBalanceSheet %>% transmute(
   date = endDate, 
   CurrentRatio = AssetsCurrent / LiabilitiesCurrent
 )
 
 ```
 
-`Inference : Amazon consistently had a ratio of 1.0 or greater which indicates that Amazon possesed more assets than liablities, which is a good sign for company's growth.`
+`Inference : Netflix consistently had a ratio of 1.0 or greater which indicates that Netflix possesed more assets than liablities, which is a good sign for company's growth.`
 
 Visualize Revenue and Expenditure!
 ========================================================
 Consolidated Statement of Operations.
-This dataset highlights the Revenue earned by Amazon v/s amount spent in activities like 
-`marketing`, `admnistration expense`, `cost of goods and services sold`, `amazon fulfillment expense` and other `ops costs`.
+This dataset highlights the Revenue earned by Netflix v/s amount spent in activities like 
+`marketing`, `admnistration expense` and other `ops costs`.
 
 ```{r, message=FALSE, warning=FALSE}
-amznSOP_simple <- expose( amznSOP,
-`Revenue` = 'SalesRevenueNet',
-`Expenditure` = 'CostsAndExpenses'
+nflxSOP_simple <- expose( nflxSOP,
+`Revenue` = 'Revenues',
+`Expenditure` = 'NonoperatingIncomeExpense'
 )
 
-print(amznSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 ```
 
-`Inference: Amazon as a company is increasing it's revenue every year, but this is only possible with greater expenditure. `
-`Bottomline: More the expenditure more is the revenue`
+`Inference: Netflix as a company is increasing it's revenue every year, and the highlight is that expenditure hasn't increased significantly.`
+
+`Bottomline: Netflix being purely an internet company, has the advantage of controlling the`
+`expenditure while growing to lot of users and thus generating more revenue.`
 
 Visualizing Cash Flow!
 ========================================================
-This dataset highlights how the money is used in Amazon.
+This dataset highlights how the money is used in Netflix.
 
 ```{r}
-amznCashflow_simple <- expose( amznCashflow,
+nflxCashflow_simple <- expose( nflxCashflow,
 `Ops Activities` = 'NetCashProvidedByUsedInOperatingActivities',
 `Investing` = 'NetCashProvidedByUsedInInvestingActivities',
 `Financing` = 'NetCashProvidedByUsedInFinancingActivities'
 )
-print(amznCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 ```
 
-`Inference: Amazon spends most of the money in Day to day operational activities, but invests some money in acquiring property plant, equipment, business interests, marketable services`
+`Inference: Netflix spends most of the money in Day to day operational activities, but invests some money in acquiring content library, additions to streaming content and payment of equipments like servers.`
 
 Visualizing Balance Sheet!
 ========================================================
 
-This dataset highlights core components of Balance sheet of Amazon
+This dataset highlights core components of Balance sheet of Netflix
 ```{r}
 
-amznBalanceSheet_simple<- expose( amznBalanceSheet,
+nflxBalanceSheet_simple<- expose( nflxBalanceSheet,
 # Assets
 `Current Assets` = "AssetsCurrent",
 `Noncurrent Assets` = other("Assets"),
@@ -455,7 +456,7 @@ amznBalanceSheet_simple<- expose( amznBalanceSheet,
 `Current Liabilities` = "LiabilitiesCurrent",
 `Stockholders Equity` = "StockholdersEquity"
 )
-print(amznBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+print(nflxBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 
 ```
@@ -464,8 +465,8 @@ Visualizing in detail
 ========================================================
 
 ```{r}
-plot_double_stacked_bar(amznBalanceSheet_simple)
-plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
+plot_double_stacked_bar(nflxBalanceSheet_simple)
+plot_double_stacked_bar(proportional(nflxBalanceSheet_simple))
 
 ```
 
