@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--XBRL Document Created with Wdesk from Workiva, formerly WebFilings-->
+<!-- -->
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.netflix.com/20141231" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nflx="http://www.netflix.com/20141231" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://fasb.org/us-gaap/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-gaap-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-roles/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-roles-2014-01-31.xsd" />
+  <xsd:import namespace="http://fasb.org/us-types/2014-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2014/elts/us-types-2014-01-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/arcrole/fact-explanatoryFact" schemaLocation="http://www.xbrl.org/lrr/arcrole/factExplanatory-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/negated" schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/net" schemaLocation="http://www.xbrl.org/lrr/role/net-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/country/2013-01-31" schemaLocation="http://xbrl.sec.gov/country/2013/country-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/currency/2014-01-31" schemaLocation="http://xbrl.sec.gov/currency/2014/currency-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/dei/2014-01-31" schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/exch/2014-01-31" schemaLocation="http://xbrl.sec.gov/exch/2014/exch-2014-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/invest/2013-01-31" schemaLocation="http://xbrl.sec.gov/invest/2013/invest-2013-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/naics/2011-01-31" schemaLocation="http://xbrl.sec.gov/naics/2011/naics-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/sic/2011-01-31" schemaLocation="http://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/stpr/2011-01-31" schemaLocation="http://xbrl.sec.gov/stpr/2011/stpr-2011-01-31.xsd" />
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nflx-20141231_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nflx-20141231_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nflx-20141231_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple" />
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nflx-20141231_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple" />
+      <link:roleType id="AccumulatedOtherComprehensiveLossIncome" roleURI="http://www.netflix.com/role/AccumulatedOtherComprehensiveLossIncome">
+        <link:definition>2109100 - Disclosure - Accumulated Other Comprehensive (Loss) Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossIncomeDetails" roleURI="http://www.netflix.com/role/AccumulatedOtherComprehensiveLossIncomeDetails">
+        <link:definition>2409402 - Disclosure - Accumulated Other Comprehensive (Loss) Income (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="AccumulatedOtherComprehensiveLossIncomeTables" roleURI="http://www.netflix.com/role/AccumulatedOtherComprehensiveLossIncomeTables">
+        <link:definition>2309301 - Disclosure - Accumulated Other Comprehensive (Loss) Income (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponents" roleURI="http://www.netflix.com/role/BalanceSheetComponents">
+        <link:definition>2104100 - Disclosure - Balance Sheet Components</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponentsComponentsOfContentLibraryDetails" roleURI="http://www.netflix.com/role/BalanceSheetComponentsComponentsOfContentLibraryDetails">
+        <link:definition>2404402 - Disclosure - Balance Sheet Components (Components of Content Library) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponentsComponentsOfContentLibraryDetailsCalc2" roleURI="http://www.netflix.com/role/BalanceSheetComponentsComponentsOfContentLibraryDetailsCalc2">
+        <link:definition>2404402 - Disclosure - Balance Sheet Components (Components of Content Library) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponentsNarrativeDetails" roleURI="http://www.netflix.com/role/BalanceSheetComponentsNarrativeDetails">
+        <link:definition>2404404 - Disclosure - Balance Sheet Components (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponentsPropertyAndEquipmentAndAccumulatedDepreciationDetails" roleURI="http://www.netflix.com/role/BalanceSheetComponentsPropertyAndEquipmentAndAccumulatedDepreciationDetails">
+        <link:definition>2404403 - Disclosure - Balance Sheet Components (Property and Equipment and Accumulated Depreciation) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="BalanceSheetComponentsTables" roleURI="http://www.netflix.com/role/BalanceSheetComponentsTables">
+        <link:definition>2304301 - Disclosure - Balance Sheet Components (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingencies" roleURI="http://www.netflix.com/role/CommitmentsAndContingencies">
+        <link:definition>2106100 - Disclosure - Commitments and Contingencies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesExpectedTimingOfPaymentsForCommitmentsDetails" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesExpectedTimingOfPaymentsForCommitmentsDetails">
+        <link:definition>2406403 - Disclosure - Commitments and Contingencies (Expected Timing of Payments for Commitments) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesFutureMinimumPaymentsUnderLeaseFinancingObligationsAndNonCancelableOperatingLeasesDetails" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesFutureMinimumPaymentsUnderLeaseFinancingObligationsAndNonCancelableOperatingLeasesDetails">
+        <link:definition>2406405 - Disclosure - Commitments and Contingencies (Future Minimum Payments Under Lease Financing Obligations and Non-Cancelable Operating Leases) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesLeaseObligationsNarrativeDetails" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesLeaseObligationsNarrativeDetails">
+        <link:definition>2406404 - Disclosure - Commitments and Contingencies (Lease Obligations) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesLegalProceedingsDetails" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesLegalProceedingsDetails">
+        <link:definition>2406406 - Disclosure - Commitments and Contingencies (Legal Proceedings) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesStreamingContentNarrativeDetails" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesStreamingContentNarrativeDetails">
+        <link:definition>2406402 - Disclosure - Commitments and Contingencies (Streaming Content) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="CommitmentsAndContingenciesTables" roleURI="http://www.netflix.com/role/CommitmentsAndContingenciesTables">
+        <link:definition>2306301 - Disclosure - Commitments and Contingencies (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheets" roleURI="http://www.netflix.com/role/ConsolidatedBalanceSheets">
+        <link:definition>1005000 - Statement - Consolidated Balance Sheets</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedBalanceSheetsParenthetical" roleURI="http://www.netflix.com/role/ConsolidatedBalanceSheetsParenthetical">
+        <link:definition>1005501 - Statement - Consolidated Balance Sheets (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementOfComprehensiveIncomeParenthetical" roleURI="http://www.netflix.com/role/ConsolidatedStatementOfComprehensiveIncomeParenthetical">
+        <link:definition>1002001 - Statement - Consolidated Statement of Comprehensive Income (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfCashFlows" roleURI="http://www.netflix.com/role/ConsolidatedStatementsOfCashFlows">
+        <link:definition>1004000 - Statement - Consolidated Statements of Cash Flows</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfComprehensiveIncome" roleURI="http://www.netflix.com/role/ConsolidatedStatementsOfComprehensiveIncome">
+        <link:definition>1002000 - Statement - Consolidated Statements of Comprehensive Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfOperations" roleURI="http://www.netflix.com/role/ConsolidatedStatementsOfOperations">
+        <link:definition>1001000 - Statement - Consolidated Statements of Operations</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ConsolidatedStatementsOfStockholdersEquity" roleURI="http://www.netflix.com/role/ConsolidatedStatementsOfStockholdersEquity">
+        <link:definition>1006000 - Statement - Consolidated Statements of Stockholders' Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DocumentAndEntityInformation" roleURI="http://www.netflix.com/role/DocumentAndEntityInformation">
+        <link:definition>0001000 - Document - Document And Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EmployeeBenefitPlan" roleURI="http://www.netflix.com/role/EmployeeBenefitPlan">
+        <link:definition>2111100 - Disclosure - Employee Benefit Plan</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="EmployeeBenefitPlanDetails" roleURI="http://www.netflix.com/role/EmployeeBenefitPlanDetails">
+        <link:definition>2411401 - Disclosure - Employee Benefit Plan (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="GuaranteesIndemnificationObligations" roleURI="http://www.netflix.com/role/GuaranteesIndemnificationObligations">
+        <link:definition>2107100 - Disclosure - Guarantees-Indemnification Obligations</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxes" roleURI="http://www.netflix.com/role/IncomeTaxes">
+        <link:definition>2110100 - Disclosure - Income Taxes</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesComponentsOfProvisionForIncomeTaxesDetails" roleURI="http://www.netflix.com/role/IncomeTaxesComponentsOfProvisionForIncomeTaxesDetails">
+        <link:definition>2410403 - Disclosure - Income Taxes (Components of Provision for Income Taxes) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesDeferredTaxAssetsAndLiabilitiesDetails" roleURI="http://www.netflix.com/role/IncomeTaxesDeferredTaxAssetsAndLiabilitiesDetails">
+        <link:definition>2410406 - Disclosure - Income Taxes (Deferred Tax Assets and Liabilities) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesNarrativeDetails" roleURI="http://www.netflix.com/role/IncomeTaxesNarrativeDetails">
+        <link:definition>2410404 - Disclosure - Income Taxes (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesReconciliationOfProvisionForIncomeTaxesDetails" roleURI="http://www.netflix.com/role/IncomeTaxesReconciliationOfProvisionForIncomeTaxesDetails">
+        <link:definition>2410405 - Disclosure - Income Taxes (Reconciliation of Provision for Income Taxes) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesScheduleOfIncomeBeforeIncomeTaxesDetails" roleURI="http://www.netflix.com/role/IncomeTaxesScheduleOfIncomeBeforeIncomeTaxesDetails">
+        <link:definition>2410402 - Disclosure - Income Taxes (Schedule of Income before Income Taxes) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesSummaryOfChangesInUnrecognizedTaxBenefitsDetails" roleURI="http://www.netflix.com/role/IncomeTaxesSummaryOfChangesInUnrecognizedTaxBenefitsDetails">
+        <link:definition>2410407 - Disclosure - Income Taxes (Summary of Changes in Unrecognized Tax Benefits) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IncomeTaxesTables" roleURI="http://www.netflix.com/role/IncomeTaxesTables">
+        <link:definition>2310301 - Disclosure - Income Taxes (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebt" roleURI="http://www.netflix.com/role/LongTermDebt">
+        <link:definition>2105100 - Disclosure - Long-Term Debt</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebt5375SeniorNotesNarrativeDetails" roleURI="http://www.netflix.com/role/LongTermDebt5375SeniorNotesNarrativeDetails">
+        <link:definition>2405403 - Disclosure - Long-Term Debt (5.375% Senior Notes) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebt5750SeniorNotesNarrativeDetails" roleURI="http://www.netflix.com/role/LongTermDebt5750SeniorNotesNarrativeDetails">
+        <link:definition>2405404 - Disclosure - Long-term Debt (5.750% Senior Notes) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebt850SeniorNotesNarrativeDetails" roleURI="http://www.netflix.com/role/LongTermDebt850SeniorNotesNarrativeDetails">
+        <link:definition>2405402 - Disclosure - Long-Term Debt (8.50% Senior Notes) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="LongTermDebtSeniorConvertibleNotesNarrativeDetails" roleURI="http://www.netflix.com/role/LongTermDebtSeniorConvertibleNotesNarrativeDetails">
+        <link:definition>2405401 - Disclosure - Long-Term Debt (Senior Convertible Notes) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPolicies" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPolicies">
+        <link:definition>2101100 - Disclosure - Organization and Summary of Significant Accounting Policies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPoliciesComputationOfNetIncomePerShareDetails" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPoliciesComputationOfNetIncomePerShareDetails">
+        <link:definition>2401404 - Disclosure - Organization and Summary of Significant Accounting Policies (Computation of Net Income Per Share) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPoliciesNarrativeDetails" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPoliciesNarrativeDetails">
+        <link:definition>2401403 - Disclosure - Organization and Summary of Significant Accounting Policies (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPoliciesPolicy" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPoliciesPolicy">
+        <link:definition>2201201 - Disclosure - Organization and Summary of Significant Accounting Policies (Policy)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPoliciesSummaryOfPotentialCommonSharesExcludedFromDilutedCalculationDetails" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPoliciesSummaryOfPotentialCommonSharesExcludedFromDilutedCalculationDetails">
+        <link:definition>2401405 - Disclosure - Organization And Summary Of Significant Accounting Policies (Summary of Potential Common Shares Excluded From Diluted Calculation) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="OrganizationAndSummaryOfSignificantAccountingPoliciesTables" roleURI="http://www.netflix.com/role/OrganizationAndSummaryOfSignificantAccountingPoliciesTables">
+        <link:definition>2301302 - Disclosure - Organization and Summary of Significant Accounting Policies (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="Reclassifications" roleURI="http://www.netflix.com/role/Reclassifications">
+        <link:definition>2102100 - Disclosure - Reclassifications</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ReclassificationsDetails" roleURI="http://www.netflix.com/role/ReclassificationsDetails">
+        <link:definition>2402401 - Disclosure - Reclassifications (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformation" roleURI="http://www.netflix.com/role/SegmentInformation">
+        <link:definition>2112100 - Disclosure - Segment Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationInformationOnReportableSegmentsAndReconciliationToConsolidatedNetIncomeDetails" roleURI="http://www.netflix.com/role/SegmentInformationInformationOnReportableSegmentsAndReconciliationToConsolidatedNetIncomeDetails">
+        <link:definition>2412404 - Disclosure - Segment Information (Information on Reportable Segments and Reconciliation to Consolidated Net Income) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationLongLivedAssetsByGeographicAreasDetails" roleURI="http://www.netflix.com/role/SegmentInformationLongLivedAssetsByGeographicAreasDetails">
+        <link:definition>2412403 - Disclosure - Segment Information (Long-lived Assets by Geographic Areas) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationNarrativeDetails" roleURI="http://www.netflix.com/role/SegmentInformationNarrativeDetails">
+        <link:definition>2412402 - Disclosure - Segment Information (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SegmentInformationTables" roleURI="http://www.netflix.com/role/SegmentInformationTables">
+        <link:definition>2312301 - Disclosure - Segment Information (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SelectedQuarterlyFinancialDataDetails" roleURI="http://www.netflix.com/role/SelectedQuarterlyFinancialDataDetails">
+        <link:definition>2413402 - Disclosure - Selected Quarterly Financial Data (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SelectedQuarterlyFinancialDataTables" roleURI="http://www.netflix.com/role/SelectedQuarterlyFinancialDataTables">
+        <link:definition>2313301 - Disclosure - Selected Quarterly Financial Data (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="SelectedQuarterlyFinancialDataUnaudited" roleURI="http://www.netflix.com/role/SelectedQuarterlyFinancialDataUnaudited">
+        <link:definition>2113100 - Disclosure - Selected Quarterly Financial Data (Unaudited)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ShortTermInvestments" roleURI="http://www.netflix.com/role/ShortTermInvestments">
+        <link:definition>2103100 - Disclosure - Short-Term Investments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ShortTermInvestmentsAvailableForSaleSecuritiesReportedAtFairValueDetails" roleURI="http://www.netflix.com/role/ShortTermInvestmentsAvailableForSaleSecuritiesReportedAtFairValueDetails">
+        <link:definition>2403402 - Disclosure - Short-Term Investments (Available-For-Sale Securities Reported At Fair Value) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ShortTermInvestmentsEstimatedFairValueOfShortTermInvestmentsByContractualMaturityDetails" roleURI="http://www.netflix.com/role/ShortTermInvestmentsEstimatedFairValueOfShortTermInvestmentsByContractualMaturityDetails">
+        <link:definition>2403403 - Disclosure - Short-Term Investments (Estimated Fair Value Of Short-Term Investments By Contractual Maturity) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="ShortTermInvestmentsTables" roleURI="http://www.netflix.com/role/ShortTermInvestmentsTables">
+        <link:definition>2303301 - Disclosure - Short-Term Investments (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquity" roleURI="http://www.netflix.com/role/StockholdersEquity">
+        <link:definition>2108100 - Disclosure - Stockholders' Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityEmployeeStockPurchasePlanNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityEmployeeStockPurchasePlanNarrativeDetails">
+        <link:definition>2408406 - Disclosure - Stockholders' Equity (Employee Stock Purchase Plan) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityNarrativeDetails">
+        <link:definition>2408402 - Disclosure - Stockholders' Equity (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityPreferredStockAndVotingRightsNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityPreferredStockAndVotingRightsNarrativeDetails">
+        <link:definition>2408403 - Disclosure - Stockholders' Equity (Preferred Stock and Voting Rights) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityStockBasedCompensationNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityStockBasedCompensationNarrativeDetails">
+        <link:definition>2408407 - Disclosure - Stockholders' Equity (Stock-Based Compensation) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityStockOptionPlansNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityStockOptionPlansNarrativeDetails">
+        <link:definition>2408404 - Disclosure - Stockholders' Equity (Stock Option Plans) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityStockRepurchaseProgramNarrativeDetails" roleURI="http://www.netflix.com/role/StockholdersEquityStockRepurchaseProgramNarrativeDetails">
+        <link:definition>2408409 - Disclosure - Stockholders' Equity (Stock Repurchase Program) (Narrative) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquitySummaryOfActivityRelatedToStockOptionPlansDetails" roleURI="http://www.netflix.com/role/StockholdersEquitySummaryOfActivityRelatedToStockOptionPlansDetails">
+        <link:definition>2408405 - Disclosure - Stockholders' Equity (Summary of Activity Related to Stock Option Plans) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquitySummaryOfAssumptionsUsedToValueStockOptionGrantsDetails" roleURI="http://www.netflix.com/role/StockholdersEquitySummaryOfAssumptionsUsedToValueStockOptionGrantsDetails">
+        <link:definition>2408408 - Disclosure - Stockholders' Equity (Summary of Assumptions Used to Value Stock Option Grants) (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="StockholdersEquityTables" roleURI="http://www.netflix.com/role/StockholdersEquityTables">
+        <link:definition>2308301 - Disclosure - Stockholders' Equity (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element abstract="true" id="nflx_AccruedExpensesMember" name="AccruedExpensesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_AdditionsToStreamingContentLibrary" name="AdditionsToStreamingContentLibrary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesGrossUnrealizedGain1" name="AvailableForSaleSecuritiesGrossUnrealizedGain1" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesGrossUnrealizedLoss1" name="AvailableForSaleSecuritiesGrossUnrealizedLoss1" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashAmortizedCost" name="AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashAmortizedCost" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashFairValueDisclosure" name="AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashFairValueDisclosure" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashUnrealizedGains" name="AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashUnrealizedGains" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashUnrealizedLosses" name="AvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashUnrealizedLosses" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="nflx_BalanceSheetComponentsDisclosureAbstract" name="BalanceSheetComponentsDisclosureAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_CapitalLeasesFinancingObligationUnderExtendedLeaseTerm" name="CapitalLeasesFinancingObligationUnderExtendedLeaseTerm" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalLeasesIncreaseDecreaseinFutureMinimumPaymentsDue" name="CapitalLeasesIncreaseDecreaseinFutureMinimumPaymentsDue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDue" name="CapitalandOperatingLeasesFutureMinimumPaymentsDue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDueThereafter" name="CapitalandOperatingLeasesFutureMinimumPaymentsDueThereafter" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDueinFiveYears" name="CapitalandOperatingLeasesFutureMinimumPaymentsDueinFiveYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDueinFourYears" name="CapitalandOperatingLeasesFutureMinimumPaymentsDueinFourYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDueinThreeYears" name="CapitalandOperatingLeasesFutureMinimumPaymentsDueinThreeYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsDueinTwoYears" name="CapitalandOperatingLeasesFutureMinimumPaymentsDueinTwoYears" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CapitalandOperatingLeasesFutureMinimumPaymentsNextTwelveMonths" name="CapitalandOperatingLeasesFutureMinimumPaymentsNextTwelveMonths" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CashCashEquivalentsAndRestrictedCashAmortizedCost" name="CashCashEquivalentsAndRestrictedCashAmortizedCost" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CashCashEquivalentsAndRestrictedCashFairValueDisclosure" name="CashCashEquivalentsAndRestrictedCashFairValueDisclosure" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CashCashEquivalentsAndRestrictedCashGrossUnrealizedGains" name="CashCashEquivalentsAndRestrictedCashGrossUnrealizedGains" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CashCashEquivalentsAndRestrictedCashGrossUnrealizedLosses" name="CashCashEquivalentsAndRestrictedCashGrossUnrealizedLosses" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CashCashEquivalentsandShorttermInvestmentsPolicyTextBlock" name="CashCashEquivalentsandShorttermInvestmentsPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ChangeInStreamingContentLiabilities" name="ChangeInStreamingContentLiabilities" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ClassofWarrantorRightOwnershipThresholdofCommonStocktoBecomeExercisableCertainInstitutionalInvestorsPercent" name="ClassofWarrantorRightOwnershipThresholdofCommonStocktoBecomeExercisableCertainInstitutionalInvestorsPercent" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ClassofWarrantorRightOwnershipThresholdofCommonStocktoBecomeExercisablePercent" name="ClassofWarrantorRightOwnershipThresholdofCommonStocktoBecomeExercisablePercent" nillable="true" substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ClassofWarrantorRightRightsIssuedasDividendsPerOutstandingCommonShare" name="ClassofWarrantorRightRightsIssuedasDividendsPerOutstandingCommonShare" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CommonStockFairValueAtConversion" name="CommonStockFairValueAtConversion" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="instant" />
+  <xsd:element id="nflx_CommonstockVotingRightsVotesperShare" name="CommonstockVotingRightsVotesperShare" nillable="true" substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ContentLiabilitiesCurrent" name="ContentLiabilitiesCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_ContentLiabilitiesNoncurrent" name="ContentLiabilitiesNoncurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_ContentLibraryAccumulatedAmortization" name="ContentLibraryAccumulatedAmortization" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="nflx_ContentLibraryCurrentMember" name="ContentLibraryCurrentMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ContentLibraryGross" name="ContentLibraryGross" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_ContentLibraryNet" name="ContentLibraryNet" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_ContentLibraryNetCurrent" name="ContentLibraryNetCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_ContentLibraryNetNoncurrent" name="ContentLibraryNetNoncurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="nflx_ContractualObligationLineItems" name="ContractualObligationLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_ContractualObligationTable" name="ContractualObligationTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ContributionProfit" name="ContributionProfit" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_CostOfServicesAmortizationOfContentLibrary" name="CostOfServicesAmortizationOfContentLibrary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_CostOfServicesAmortizationOfDvdContentLibrary" name="CostOfServicesAmortizationOfDvdContentLibrary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_CostOfServicesAmortizationOfStreamingContentLibrary" name="CostOfServicesAmortizationOfStreamingContentLibrary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_CurrentContentLiabilitiesMember" name="CurrentContentLiabilitiesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_DVDContentLibraryPolicyPolicyTextBlock" name="DVDContentLibraryPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_DVDContentLibraryUsefulLife" name="DVDContentLibraryUsefulLife" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_DVDOperationsEquipmentMember" name="DVDOperationsEquipmentMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_DebtInstrumentMakeWholePremium" name="DebtInstrumentMakeWholePremium" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_DocumentAndEntityInformationAbstract" name="DocumentAndEntityInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_DomesticDvdMember" name="DomesticDvdMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_DomesticStreamingMember" name="DomesticStreamingMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_EffectiveIncomeTaxReconciliationChangeinTaxReserves" name="EffectiveIncomeTaxReconciliationChangeinTaxReserves" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_EightPointFiveZeroPercentageSeniorNotesMember" name="EightPointFiveZeroPercentageSeniorNotesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_ExercisePeriodAxis" name="ExercisePeriodAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_ExercisePeriodDomain" name="ExercisePeriodDomain" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_FairValueDisclosureAvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashTableTextBlock" name="FairValueDisclosureAvailableForSaleSecuritiesIncludingCashCashEquivalentsAndRestrictedCashTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_FivePointSevenFivePercentSeniorNotesMember" name="FivePointSevenFivePercentSeniorNotesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_FivePointThreeSevenFivePercentSeniorNotesMember" name="FivePointThreeSevenFivePercentSeniorNotesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_GrantedafterJune302004andbeforeJanuary12007Member" name="GrantedafterJune302004andbeforeJanuary12007Member" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_InterestandDebtExpenseandNonoperatingIncomeExpense" name="InterestandDebtExpenseandNonoperatingIncomeExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_InternationalMember" name="InternationalMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_InternationalStreamingMember" name="InternationalStreamingMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_LesseeLeasingArrangementsCapitalLeasesRenewalTerm" name="LesseeLeasingArrangementsCapitalLeasesRenewalTerm" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_LosGatosBuildingsExpandedSiteMember" name="LosGatosBuildingsExpandedSiteMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_LosGatosBuildingsMember" name="LosGatosBuildingsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_MarketingExpensesReclassifiedtoCostsofRevenuesMember" name="MarketingExpensesReclassifiedtoCostsofRevenuesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_NonCurrentAssetsMember" name="NonCurrentAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_NoncurrentContentLiabilitiesMember" name="NoncurrentContentLiabilitiesMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_NumberOfSubscriptionsAtEndOfPeriod" name="NumberOfSubscriptionsAtEndOfPeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="instant" />
+  <xsd:element id="nflx_NumberofHoursofStreamingContentWatchedperMonth" name="NumberofHoursofStreamingContentWatchedperMonth" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_NumberofStreamingMembers" name="NumberofStreamingMembers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="instant" />
+  <xsd:element abstract="true" id="nflx_OrganizationAndSummaryOfSignificantAccountingPoliciesLineItems" name="OrganizationAndSummaryOfSignificantAccountingPoliciesLineItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_PaymentsForAcquisitionsOfContentLibrary" name="PaymentsForAcquisitionsOfContentLibrary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ProceedsfromIssuancePaymentsforRepurchasePublicOfferingofCommonStock" name="ProceedsfromIssuancePaymentsforRepurchasePublicOfferingofCommonStock" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ScheduleOfContentLibraryTableTextBlock" name="ScheduleOfContentLibraryTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_ScheduleOfOrganizationAndSummaryOfSignificantAccountingPoliciesTable" name="ScheduleOfOrganizationAndSummaryOfSignificantAccountingPoliciesTable" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_SeniorConvertibleNoteMember" name="SeniorConvertibleNoteMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardCommonStockLookBackPeriod" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardCommonStockLookBackPeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardCommonStockPurchasePeriod" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardCommonStockPurchasePeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardExercisePeriodAfterEmploymentTermination" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardExercisePeriodAfterEmploymentTermination" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsSuboptimalExerciseFactorMaximum" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsSuboptimalExerciseFactorMaximum" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsSuboptimalExerciseFactorMinimum" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsSuboptimalExerciseFactorMinimum" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberofSharesAvailableForGrantDeauthorizationsInPeriod" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberofSharesAvailableForGrantDeauthorizationsInPeriod" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_ShortTermInvestmentsAndFairValueMeasurementAbstract" name="ShortTermInvestmentsAndFairValueMeasurementAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_ShortTermInvestmentsAndFairValueMeasurementTextBlock" name="ShortTermInvestmentsAndFairValueMeasurementTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_StockRepurchaseProgramAmountRepurchasedtoDate" name="StockRepurchaseProgramAmountRepurchasedtoDate" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_StockholdersEquityAndStockBasedCompensationDisclosureAbstract" name="StockholdersEquityAndStockBasedCompensationDisclosureAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_StockholdersEquityAndStockBasedCompensationDisclosureTextBlock" name="StockholdersEquityAndStockBasedCompensationDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_StreamingContentLibraryOriginalContentUsefulLife" name="StreamingContentLibraryOriginalContentUsefulLife" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_StreamingContentLibraryPolicyPolicyTextBlock" name="StreamingContentLibraryPolicyPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="nonnum:textBlockItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_StreamingContentLibraryUsefulLife" name="StreamingContentLibraryUsefulLife" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_SuperiorCourtOfCaliforniaSantaClaraCountyMember" name="SuperiorCourtOfCaliforniaSantaClaraCountyMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_TaxCreditCarryforwardNotSubjecttoExpiration" name="TaxCreditCarryforwardNotSubjecttoExpiration" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_TaxCreditCarryforwardSubjecttoExpiration" name="TaxCreditCarryforwardSubjecttoExpiration" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element id="nflx_TradingDaysPriorToConversionDateRequiredForConversion" name="TradingDaysPriorToConversionDateRequiredForConversion" nillable="true" substitutionGroup="xbrli:item" type="xbrli:durationItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_TwoThousandAndElevenStockPlanMember" name="TwoThousandAndElevenStockPlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_TwoThousandAndTwoStockPlanMember" name="TwoThousandAndTwoStockPlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_TwoThousandTwoEmployeeStockPurchasePlanMember" name="TwoThousandTwoEmployeeStockPurchasePlanMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_UndesignatedStockMember" name="UndesignatedStockMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element abstract="true" id="nflx_UnitedStatesDistrictCourtForNorthernDistrictOfCaliforniaMember" name="UnitedStatesDistrictCourtForNorthernDistrictOfCaliforniaMember" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration" />
+  <xsd:element id="nflx_WeightedAveragePriceOfCommonStock" name="WeightedAveragePriceOfCommonStock" nillable="true" substitutionGroup="xbrli:item" type="num:perShareItemType" xbrli:periodType="duration" />
+</xsd:schema>

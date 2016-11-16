@@ -353,4 +353,120 @@ Visualizing in detail
 ![picture of spaghetti](pep/pepIncome.png)
 ![picture of spaghetti](pep/pepProp.png)
 
+Analyzing Amazon
+========================================================
+
+```{r}
+#AMZN forms
+amzn_url2015<-'http://localhost:8000/amzn/2015/amzn-20141231.xml'
+amzn_url2016<- 'http://localhost:8000/amzn/2016/amzn-20151231.xml'
+old_o <- options(stringsAsFactors = FALSE)
+amzn_2015 <- xbrlDoAll(amzn_url2015)
+amzn_2016 <- xbrlDoAll(amzn_url2016)
+options(old_o)
+amzn2015 <- xbrl_get_statements(amzn_2015)
+amzn2016 <- xbrl_get_statements(amzn_2016)
+
+```
+
+Amazon 10K in 2015
+========================================================
+
+![picture of spaghetti](amzn/amzn2015.png)
+
+## Amazon 10K in 2016
+
+![picture of spaghetti](amzn/amzn2016.png)
+
+Merge the result!
+========================================================
+
+```{r}
+amzn <- merge(amzn2015,amzn2016)
+amznSOP <- merge(amzn2015$ConsolidatedStatementsOfOperations,amzn2016$ConsolidatedStatementsOfOperations)
+amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
+amznCashflow <- merge(amzn2015$ConsolidatedStatementsOfCashFlows,amzn2016$ConsolidatedStatementsOfCashFlows)
+
+
+```
+![picture of spaghetti](amzn/amazonbs.png)
+
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
+```{r}
+amznBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
+
+```
+
+`Inference : Amazon consistently had a ratio of 1.0 or greater which indicates that Amazon possesed more assets than liablities, which is a good sign for company's growth.`
+
+Visualize Revenue and Expenditure!
+========================================================
+Consolidated Statement of Operations.
+This dataset highlights the Revenue earned by Amazon v/s amount spent in activities like 
+`marketing`, `admnistration expense`, `cost of goods and services sold`, `amazon fulfillment expense` and other `ops costs`.
+
+```{r, message=FALSE, warning=FALSE}
+amznSOP_simple <- expose( amznSOP,
+`Revenue` = 'SalesRevenueNet',
+`Expenditure` = 'CostsAndExpenses'
+)
+
+print(amznSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+
+```
+
+`Inference: Amazon as a company is increasing it's revenue every year, but this is only possible with greater expenditure. `
+`Bottomline: More the expenditure more is the revenue`
+
+Visualizing Cash Flow!
+========================================================
+This dataset highlights how the money is used in Amazon.
+
+```{r}
+amznCashflow_simple <- expose( amznCashflow,
+`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivities',
+`Investing` = 'NetCashProvidedByUsedInInvestingActivities',
+`Financing` = 'NetCashProvidedByUsedInFinancingActivities'
+)
+print(amznCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+
+```
+
+`Inference: Amazon spends most of the money in Day to day operational activities, but invests some money in acquiring property plant, equipment, business interests, marketable services`
+
+Visualizing Balance Sheet!
+========================================================
+
+This dataset highlights core components of Balance sheet of Amazon
+```{r}
+
+amznBalanceSheet_simple<- expose( amznBalanceSheet,
+# Assets
+`Current Assets` = "AssetsCurrent",
+`Noncurrent Assets` = other("Assets"),
+# Liabilites and equity
+`Current Liabilities` = "LiabilitiesCurrent",
+`Stockholders Equity` = "StockholdersEquity"
+)
+print(amznBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+
+
+```
+
+Visualizing in detail
+========================================================
+
+```{r}
+plot_double_stacked_bar(amznBalanceSheet_simple)
+plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
+
+```
+
 
