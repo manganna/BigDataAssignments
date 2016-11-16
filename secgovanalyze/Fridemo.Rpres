@@ -486,3 +486,83 @@ wmt2016 <- xbrl_get_statements(wmt_2016)
 
 ```
 
+Netflix 10K in 2015
+========================================================
+
+![picture of spaghetti](wmt/wmt2015.png)
+
+## Netflix 10K in 2016
+
+![picture of spaghetti](wmt/wmt2016.png)
+
+Merge the result!
+========================================================
+
+```{r}
+wmtCashFlow <- merge(wmt2015$ConsolidatedStatementsOfCashFlowsAudited, wmt2016$ConsolidatedStatementsOfCashFlows)
+wmtIncomeStatement <- merge(wmt2015$ConsolidatedStatementsOfIncomeAudited,wmt2016$ConsolidatedStatementsOfIncome)
+wmtBalanceSheet <- merge(wmt2015$ConsolidatedBalanceSheetsAudited,wmt2016$ConsolidatedBalanceSheets)
+
+```
+![picture of spaghetti](wmt/wmtxbs.png)
+
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
+```{r}
+wmtBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
+
+```
+
+`Inference : Walmart consistently had a ratio of less than 1.0 which indicates that Walmart possesed more liablities than assets, which is not a good sign for company's growth. But given Walmart, which is the largest employer in the world, this case is an exception as it even makes it to Rank 1 of Fortune500 list of companies.`
+
+Visualizing Cash Flow!
+========================================================
+This dataset highlights how the money is used in Netflix.
+
+```{r}
+wmtCashflow_simple <- expose( wmtCashFlow,
+`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivities',
+`Investing` = 'NetCashProvidedByUsedInInvestingActivities',
+`Financing` = 'NetCashProvidedByUsedInFinancingActivities'
+)
+print(wmtCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+
+```
+
+`Inference: Netflix spends most of the money in finance activities, mainly because it's a high performant stock in the Wall Street and so there are regular payments of dividends by Walmart.` 
+`Walmart has managed to keep it's Ops expenditure to a minimum which is a good thing, indicating automating is slowly coming into picture to reduce costs.`
+
+Visualizing Balance Sheet!
+========================================================
+
+This dataset highlights core components of Balance sheet of Netflix
+```{r}
+
+wmtBalanceSheet_simple<- expose( wmtBalanceSheet,
+# Assets
+`Current Assets` = "AssetsCurrent",
+`Noncurrent Assets` = other("Assets"),
+# Liabilites and equity
+`Current Liabilities` = "LiabilitiesCurrent",
+`Stockholders Equity` = "StockholdersEquity"
+)
+print(wmtBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+
+
+```
+
+Visualizing in detail
+========================================================
+
+```{r}
+plot_double_stacked_bar(wmtBalanceSheet_simple)
+plot_double_stacked_bar(proportional(wmtBalanceSheet_simple))
+
+```
+

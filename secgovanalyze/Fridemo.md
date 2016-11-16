@@ -1047,3 +1047,199 @@ wmt2015 <- xbrl_get_statements(wmt_2015)
 wmt2016 <- xbrl_get_statements(wmt_2016)
 ```
 
+Netflix 10K in 2015
+========================================================
+
+![picture of spaghetti](wmt/wmt2015.png)
+
+## Netflix 10K in 2016
+
+![picture of spaghetti](wmt/wmt2016.png)
+
+Merge the result!
+========================================================
+
+
+```r
+wmtCashFlow <- merge(wmt2015$ConsolidatedStatementsOfCashFlowsAudited, wmt2016$ConsolidatedStatementsOfCashFlows)
+wmtIncomeStatement <- merge(wmt2015$ConsolidatedStatementsOfIncomeAudited,wmt2016$ConsolidatedStatementsOfIncome)
+wmtBalanceSheet <- merge(wmt2015$ConsolidatedBalanceSheetsAudited,wmt2016$ConsolidatedBalanceSheets)
+```
+![picture of spaghetti](wmt/wmtxbs.png)
+
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
+
+```r
+wmtBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
+```
+
+```
+        date CurrentRatio
+1 2013-01-31    0.8346097
+2 2014-01-31    0.8823275
+3 2015-01-31    0.9694509
+```
+
+`Inference : Walmart consistently had a ratio of less than 1.0 which indicates that Walmart possesed more liablities than assets, which is not a good sign for company's growth. But given Walmart, which is the largest employer in the world, this case is an exception as it even makes it to Rank 1 of Fortune500 list of companies.`
+
+Visualizing Cash Flow!
+========================================================
+This dataset highlights how the money is used in Netflix.
+
+
+```r
+wmtCashflow_simple <- expose( wmtCashFlow,
+`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivities',
+`Investing` = 'NetCashProvidedByUsedInInvestingActivities',
+`Financing` = 'NetCashProvidedByUsedInFinancingActivities'
+)
+print(wmtCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+```
+
+<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: left;'><strong>Cash and Cash Equivalents, Period Increase (Decrease)</strong></td>
+<td style='text-align: right;'><strong>  1.854</strong></td>
+<td style='text-align: right;'><strong> -0.500</strong></td>
+<td style='text-align: right;'><strong>  1.231</strong></td>
+<td style='text-align: right;'><strong> -0.845</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Ops Activities</td>
+<td style='text-align: right;'> -5.064</td>
+<td style='text-align: right;'> -9.845</td>
+<td style='text-align: right;'> -9.817</td>
+<td style='text-align: right;'> -8.561</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Investing</td>
+<td style='text-align: right;'>-11.125</td>
+<td style='text-align: right;'>-12.298</td>
+<td style='text-align: right;'>-12.611</td>
+<td style='text-align: right;'>-16.609</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Financing</td>
+<td style='text-align: right;'>-15.071</td>
+<td style='text-align: right;'>-11.017</td>
+<td style='text-align: right;'>-11.972</td>
+<td style='text-align: right;'> -8.458</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherCashAndCashEquivalentsPeriodIncreaseDecrease_</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> -0.514</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> -0.442</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>  0.223</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> -0.033</td>
+</tr>
+</tbody>
+</table>
+
+`Inference: Netflix spends most of the money in finance activities, mainly because it's a high performant stock in the Wall Street and so there are regular payments of dividends by Walmart.` 
+`Walmart has managed to keep it's Ops expenditure to a minimum which is a good thing, indicating automating is slowly coming into picture to reduce costs.`
+
+Visualizing Balance Sheet!
+========================================================
+
+This dataset highlights core components of Balance sheet of Netflix
+
+```r
+wmtBalanceSheet_simple<- expose( wmtBalanceSheet,
+# Assets
+`Current Assets` = "AssetsCurrent",
+`Noncurrent Assets` = other("Assets"),
+# Liabilites and equity
+`Current Liabilities` = "LiabilitiesCurrent",
+`Stockholders Equity` = "StockholdersEquity"
+)
+print(wmtBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+```
+
+<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: left;'><strong>Assets</strong></td>
+<td style='text-align: right;'><strong>203,706</strong></td>
+<td style='text-align: right;'><strong>204,751</strong></td>
+<td style='text-align: right;'><strong>203,105</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Assets</td>
+<td style='text-align: right;'> 63,278</td>
+<td style='text-align: right;'> 61,185</td>
+<td style='text-align: right;'> 59,940</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Assets</td>
+<td style='text-align: right;'>140,428</td>
+<td style='text-align: right;'>143,566</td>
+<td style='text-align: right;'>143,165</td>
+</tr>
+<tr>
+<td style='text-align: left;'><strong>Liabilities and Equity</strong></td>
+<td style='text-align: right;'><strong>203,706</strong></td>
+<td style='text-align: right;'><strong>204,751</strong></td>
+<td style='text-align: right;'><strong>203,105</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Liabilities</td>
+<td style='text-align: right;'> 65,272</td>
+<td style='text-align: right;'> 69,345</td>
+<td style='text-align: right;'> 71,818</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Stockholders Equity</td>
+<td style='text-align: right;'> 81,394</td>
+<td style='text-align: right;'> 76,255</td>
+<td style='text-align: right;'> 76,343</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherLiabilitiesAndStockholdersEquity_</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 57,040</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 59,151</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> 54,944</td>
+</tr>
+</tbody>
+</table>
+
+Visualizing in detail
+========================================================
+
+
+```r
+plot_double_stacked_bar(wmtBalanceSheet_simple)
+```
+
+![plot of chunk unnamed-chunk-33](Fridemo-figure/unnamed-chunk-33-1.png)
+
+```r
+plot_double_stacked_bar(proportional(wmtBalanceSheet_simple))
+```
+
+![plot of chunk unnamed-chunk-33](Fridemo-figure/unnamed-chunk-33-2.png)
+
