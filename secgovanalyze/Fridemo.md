@@ -299,17 +299,18 @@ Visualizing in detail
 plot_double_stacked_bar(amznBalanceSheet_simple)
 ```
 
-![plot of chunk unnamed-chunk-8](FullFinalPakka-figure/unnamed-chunk-8-1.png)
+![plot of chunk unnamed-chunk-8](Fridemo-figure/unnamed-chunk-8-1.png)
 
 ```r
 plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
 ```
 
-![plot of chunk unnamed-chunk-8](FullFinalPakka-figure/unnamed-chunk-8-2.png)
+![plot of chunk unnamed-chunk-8](Fridemo-figure/unnamed-chunk-8-2.png)
 
 
 Analyzing Apple
 ========================================================
+
 
 
 ```r
@@ -567,10 +568,10 @@ Visualizing in detail
 plot_double_stacked_bar(aaplBalanceSheet_simple)
 ```
 
-![plot of chunk unnamed-chunk-15](FullFinalPakka-figure/unnamed-chunk-15-1.png)
+![plot of chunk unnamed-chunk-15](Fridemo-figure/unnamed-chunk-15-1.png)
 
 ```r
 plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
 ```
 
-![plot of chunk unnamed-chunk-15](FullFinalPakka-figure/unnamed-chunk-15-2.png)
+![plot of chunk unnamed-chunk-15](Fridemo-figure/unnamed-chunk-15-2.png)

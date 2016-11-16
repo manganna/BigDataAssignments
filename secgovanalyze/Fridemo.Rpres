@@ -154,6 +154,7 @@ plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
 Analyzing Apple
 ========================================================
 
+
 ```{r}
 #AMZN forms
 aapl_url2015<-'http://localhost:8000/aapl/2015/aapl-20140927.xml'
