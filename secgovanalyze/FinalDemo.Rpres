@@ -38,22 +38,30 @@ Getting data
 #FB forms
 fb_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2015/fb-20141231.xml'
 fb_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2016/fb-20151231.xml'
+fb_2015 <- xbrlDoAll(fb_url2015)
+fb_2015 <- xbrlDoAll(fb_url2015)
 
 #PEPSI forms
 pep_url2015 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/pep/2015/pep-20141227.xml'
 pep_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/pep/2016/pep-20151226.xml'
+pep_2015 <- xbrlDoAll(pep_url2015)
+pep_2016 <- xbrlDoAll(pep_url2016)
 
 #AMZN forms
 amzn_url2015<-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/amzn/2015/amzn-20141231.xml'
 amzn_url2016<- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/amzn/2016/amzn-20151231.xml'
+amzn_2015 <- xbrlDoAll(amzn_url2015)
+amzn_2016 <- xbrlDoAll(amzn_url2016)
 
 #AAPL forms
 aapl_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/aapl/2015/aapl-20140927.xml'
 aapl_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/aapl/2016/aapl-20150926.xml'
+aapl_2015 <- xbrlDoAll(aapl_url2015)
+aapl_2016 <- xbrlDoAll(aapl_url2016)
 
 #GM forms
 gm_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/GM/2015/gm-20141231.xml'
 gm_url2016 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/GM/2016/gm-20151231.xml'
-
-
+gm_2015 <- xbrlDoAll(gm_url2015)
+gm_2016 <- xbrlDoAll(gm_url2016)
 ```
