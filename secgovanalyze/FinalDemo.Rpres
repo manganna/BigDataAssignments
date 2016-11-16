@@ -65,3 +65,13 @@ gm_url2016 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/mast
 gm_2015 <- xbrlDoAll(gm_url2015)
 gm_2016 <- xbrlDoAll(gm_url2016)
 ```
+
+Balance sheet in R
+========================================================
+Analyzing Amazon
+
+```{r}
+
+amzn2015 <- xbrl_get_statements(amzn_2015)
+amzn2016 <- xbrl_get_statements(amzn_2016)
+```
