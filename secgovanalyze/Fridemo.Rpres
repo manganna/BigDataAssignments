@@ -1,3 +1,8 @@
+<style>
+.small-code pre code {
+  font-size: .9em;
+}
+</style>
 Company Balance Sheet Analysis
 ========================================================
 author: Karan Sharma
@@ -16,6 +21,7 @@ List of Companies
 
 Setting up things
 ========================================================
+class: small-code
 
 ```{r, message=FALSE, warning=FALSE}
 # To parse XML documents
@@ -35,6 +41,7 @@ setwd("~/Work/BigDataAssignments/secgovanalyze")
 
 Analyzing Amazon
 ========================================================
+class: small-code
 
 ```{r}
 #AMZN forms
@@ -60,6 +67,7 @@ Amazon 10K in 2015
 
 Merge the result!
 ========================================================
+class: small-code
 
 ```{r}
 amzn <- merge(amzn2015,amzn2016)
@@ -73,6 +81,8 @@ amznCashflow <- merge(amzn2015$ConsolidatedStatementsOfCashFlows,amzn2016$Consol
 
 Financial ratios!
 ========================================================
+class: small-code
+
 It's the ratio of current assests / current liabilities.  
 
 
@@ -88,6 +98,8 @@ amznBalanceSheet %>% transmute(
 
 Visualize Revenue and Expenditure!
 ========================================================
+class: small-code
+
 Consolidated Statement of Operations.
 This dataset highlights the Revenue earned by Amazon v/s amount spent in activities like 
 `marketing`, `admnistration expense`, `cost of goods and services sold`, `amazon fulfillment expense` and other `ops costs`.
@@ -107,6 +119,8 @@ print(amznSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing Cash Flow!
 ========================================================
+class: small-code
+
 This dataset highlights how the money is used in Amazon.
 
 ```{r}
@@ -123,6 +137,8 @@ print(amznCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing Balance Sheet!
 ========================================================
+class: small-code
+
 
 This dataset highlights core components of Balance sheet of Amazon
 ```{r}
@@ -142,16 +158,28 @@ print(amznBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing in detail
 ========================================================
+class: small-code
+
 
 ```{r}
 plot_double_stacked_bar(amznBalanceSheet_simple)
+
+```
+Visualization --continue
+========================================================
+class: small-code
+
+```{r}
 plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
 
 ```
 
 
+
 Analyzing Apple
 ========================================================
+class: small-code
+
 
 
 ```{r}
@@ -169,6 +197,8 @@ aapl2016 <- xbrl_get_statements(aapl_2016)
 
 Apple 10K in 2015
 ========================================================
+class: small-code
+
 
 ![picture of spaghetti](aapl/aapl2015.png)
 
@@ -178,6 +208,8 @@ Apple 10K in 2015
 
 Merge the result!
 ========================================================
+class: small-code
+
 
 ```{r}
 aapl <- merge(aapl2015,aapl2016)
@@ -189,6 +221,8 @@ aaplCashFlow <- merge(aapl2015$StatementOfCashFlowsIndirect,aapl2016$StatementOf
 
 Financial ratios!
 ========================================================
+class: small-code
+
 It's the ratio of current assests / current liabilities.  
 
 
@@ -204,6 +238,8 @@ CurrentRatio = AssetsCurrent / LiabilitiesCurrent
 
 Visualize Profit and Loss!
 ========================================================
+class: small-code
+
 Consolidated Statement of Income.
 
 This dataset highlights the gross profit and operating expenses at Apple.
@@ -222,6 +258,8 @@ print(aaplIncome, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing Cash Flow!
 ========================================================
+class: small-code
+
 This dataset highlights how the money is used in Amazon.
 
 ```{r}
@@ -239,6 +277,8 @@ print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing Balance Sheet!
 ========================================================
+class: small-code
+
 
 This dataset highlights core components of Balance sheet of Apple
 ```{r}
@@ -259,15 +299,24 @@ print(aaplBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing in detail
 ========================================================
+class: small-code
+
 
 ```{r}
 plot_double_stacked_bar(aaplBalanceSheet_simple)
+
+```
+Visualizing --continue
+========================================================
+class: small-code
+```{r}
 plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
 
 ```
-
 Analyzing Pepsi
 ========================================================
+class: small-code
+
 
 ```{r, message=FALSE, warning=FALSE}
 #Pepsi forms
@@ -293,6 +342,8 @@ Pepsi 10K in 2015
 
 Merge the result!
 ========================================================
+class: small-code
+
 
 ```{r}
 pepCashFlow <- merge(pep2015$ConsolidatedStatementOfCashFlows,pep2016$ConsolidatedStatementOfCashFlows)
@@ -304,6 +355,8 @@ pepIncomeStatement <- merge(pep2015$ConsolidatedStatementOfIncome,pep2016$Consol
 
 Visualize Profit and Loss!
 ========================================================
+class: small-code
+
 Consolidated Statement of Income.
 
 This dataset highlights the gross income loss and operating expenses at Pepsi
@@ -322,6 +375,8 @@ print(pepIncomeStatement_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Maintain integrity always, else face losses!
 ========================================================
+class: small-code
+
 `There's an interesting data point which is observed in the statements of Pepsi, which is  $pep_Venezuelaimpairmentcharges`. 
 
 Pepsi had to suffered huge losses due to this allegation. 
@@ -333,6 +388,8 @@ pepIncomeStatement$pep_Venezuelaimpairmentcharges
 
 Visualizing Cash Flow!
 ========================================================
+class: small-code
+
 This dataset highlights how the money is used in Pepsi.
 
 ```{r}
@@ -348,12 +405,16 @@ print(pepCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 Visualizing in detail
 ========================================================
 
-
 ![picture of spaghetti](pep/pepIncome.png)
+
+Visualizing --continue
+========================================================
 ![picture of spaghetti](pep/pepProp.png)
 
 Analyzing Netflix
 ========================================================
+class: small-code
+
 
 ```{r}
 #NFLX forms
@@ -370,6 +431,8 @@ nflx2016 <- xbrl_get_statements(nflx_2016)
 
 Netflix 10K in 2015
 ========================================================
+class: small-code
+
 
 ![picture of spaghetti](nflx/nflx2015.png)
 
@@ -379,6 +442,8 @@ Netflix 10K in 2015
 
 Merge the result!
 ========================================================
+class: small-code
+
 
 ```{r}
 nflx <- merge(nflx2015,nflx2016)
@@ -392,6 +457,8 @@ nflxCashflow <- merge(nflx2015$ConsolidatedStatementsOfCashFlows,nflx2016$Consol
 
 Financial ratios!
 ========================================================
+class: small-code
+
 It's the ratio of current assests / current liabilities.  
 
 
@@ -407,6 +474,8 @@ nflxBalanceSheet %>% transmute(
 
 Visualize Revenue and Expenditure!
 ========================================================
+class: small-code
+
 Consolidated Statement of Operations.
 This dataset highlights the Revenue earned by Netflix v/s amount spent in activities like 
 `marketing`, `admnistration expense` and other `ops costs`.
@@ -421,13 +490,12 @@ print(nflxSOP_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 ```
 
-`Inference: Netflix as a company is increasing it's revenue every year, and the highlight is that expenditure hasn't increased significantly.`
-
-`Bottomline: Netflix being purely an internet company, has the advantage of controlling the`
-`expenditure while growing to lot of users and thus generating more revenue.`
+`Inference: Netflix as a company is increasing it's revenue every year, and the highlight is that expenditure hasn't increased significantly.Netflix being purely an internet company, has the advantage of controlling the expenditure while growing to lot of users and thus generating more revenue.`
 
 Visualizing Cash Flow!
 ========================================================
+class: small-code
+
 This dataset highlights how the money is used in Netflix.
 
 ```{r}
@@ -444,6 +512,8 @@ print(nflxCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing Balance Sheet!
 ========================================================
+class: small-code
+
 
 This dataset highlights core components of Balance sheet of Netflix
 ```{r}
@@ -463,15 +533,23 @@ print(nflxBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing in detail
 ========================================================
+class: small-code
 
 ```{r}
 plot_double_stacked_bar(nflxBalanceSheet_simple)
+
+```
+Visualizing --continue
+========================================================
+class: small-code
+```{r}
 plot_double_stacked_bar(proportional(nflxBalanceSheet_simple))
 
 ```
-
 Analyzing Walmart
 ========================================================
+class: small-code
+
 
 ```{r}
 #WMT forms
@@ -497,6 +575,8 @@ Netflix 10K in 2015
 
 Merge the result!
 ========================================================
+class: small-code
+
 
 ```{r}
 wmtCashFlow <- merge(wmt2015$ConsolidatedStatementsOfCashFlowsAudited, wmt2016$ConsolidatedStatementsOfCashFlows)
@@ -504,10 +584,12 @@ wmtIncomeStatement <- merge(wmt2015$ConsolidatedStatementsOfIncomeAudited,wmt201
 wmtBalanceSheet <- merge(wmt2015$ConsolidatedBalanceSheetsAudited,wmt2016$ConsolidatedBalanceSheets)
 
 ```
-![picture of spaghetti](wmt/wmtxbs.png)
+![picture of spaghetti](wmt/wmtbs.png)
 
 Financial ratios!
 ========================================================
+class: small-code
+
 It's the ratio of current assests / current liabilities.  
 
 
@@ -523,6 +605,8 @@ wmtBalanceSheet %>% transmute(
 
 Visualizing Cash Flow!
 ========================================================
+class: small-code
+
 This dataset highlights how the money is used in Netflix.
 
 ```{r}
@@ -535,13 +619,15 @@ print(wmtCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 ```
 
-`Inference: Netflix spends most of the money in finance activities, mainly because it's a high performant stock in the Wall Street and so there are regular payments of dividends by Walmart.` 
+`Inference: Walmart spends most of the money in finance activities, mainly because it's a high performant stock in the Wall Street and so there are regular payments of dividends by Walmart.` 
 `Walmart has managed to keep it's Ops expenditure to a minimum which is a good thing, indicating automating is slowly coming into picture to reduce costs.`
 
 Visualizing Balance Sheet!
 ========================================================
+class: small-code
 
-This dataset highlights core components of Balance sheet of Netflix
+
+This dataset highlights core components of Balance sheet of Walmart.
 ```{r}
 
 wmtBalanceSheet_simple<- expose( wmtBalanceSheet,
@@ -559,10 +645,18 @@ print(wmtBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
 
 Visualizing in detail
 ========================================================
+class: small-code
+
 
 ```{r}
 plot_double_stacked_bar(wmtBalanceSheet_simple)
-plot_double_stacked_bar(proportional(wmtBalanceSheet_simple))
 
 ```
 
+Visualizing --continue
+========================================================
+class: small-code
+```{r}
+plot_double_stacked_bar(proportional(wmtBalanceSheet_simple))
+
+```
