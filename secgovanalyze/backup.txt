@@ -154,9 +154,8 @@ plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
 Analyzing Apple
 ========================================================
 
-
 ```{r}
-#AAPL forms
+#AMZN forms
 aapl_url2015<-'http://localhost:8000/aapl/2015/aapl-20140927.xml'
 aapl_url2016<- 'http://localhost:8000/aapl/2016/aapl-20150926.xml'
 old_o <- options(stringsAsFactors = FALSE)
@@ -266,116 +265,3 @@ plot_double_stacked_bar(aaplBalanceSheet_simple)
 plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
 
 ```
-
-Analyzing Pepsi
-========================================================
-
-```{r, message=FALSE, warning=FALSE}
-#Pepsi forms
-pep_url2015 <-'http://localhost:8000/pep/2015/pep-20141227.xml'
-pep_url2016 <-'http://localhost:8000/pep/2016/pep-20151226.xml'
-old_o <- options(stringsAsFactors = FALSE)
-pep_2015 <- xbrlDoAll(pep_url2015)
-pep_2016 <- xbrlDoAll(pep_url2016)
-options(old_o)
-pep2015 <- xbrl_get_statements(pep_2015)
-pep2016 <- xbrl_get_statements(pep_2016)
-
-```
-
-Pepsi 10K in 2015
-========================================================
-
-![picture of spaghetti](pep/pep2015.png)
-
-## Pepsi 10K in 2016
-
-![picture of spaghetti](pep/pep2016.png)
-
-Merge the result!
-========================================================
-
-```{r}
-pepCashFlow <- merge(pep2015$ConsolidatedStatementOfCashFlows,pep2016$ConsolidatedStatementOfCashFlows)
-pepIncomeStatement <- merge(pep2015$ConsolidatedStatementOfIncome,pep2016$ConsolidatedStatementOfIncome)
-
-```
-![picture of spaghetti](pep/pepbs.png)
-
-
-Visualize Profit and Loss!
-========================================================
-Consolidated Statement of Income.
-
-This dataset highlights the gross income loss and operating expenses at Pepsi
-
-```{r, message=FALSE, warning=FALSE}
-pepIncomeStatement_simple <- expose( pepIncomeStatement,
-`Op Exp` = 'OperatingIncomeLoss',
-`Non Ops Exp` = 'pep_InterestIncomeAndOther'
-)
-
-print(pepIncomeStatement_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
-
-```
-
-`Inference: Pepsi as a company is making losses`
-
-Maintain integrity always, else face losses!
-========================================================
-`There's an interesting data point which is observed in the statements of Pepsi, which is  $pep_Venezuelaimpairmentcharges`. 
-
-Pepsi had to suffered huge losses due to this allegation. 
-```{r}
-pepIncomeStatement$pep_Venezuelaimpairmentcharges
-
-```
-![picture of spaghetti](pep/news.png)
-
-Visualizing Cash Flow!
-========================================================
-This dataset highlights how the money is used in Amazon.
-
-```{r}
-aaplCashflow_simple <- expose( aaplCashFlow,
-`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations',
-`Investing` = 'NetCashProvidedByUsedInInvestingActivitiesContinuingOperations',
-`Financing` = 'NetCashProvidedByUsedInFinancingActivitiesContinuingOperations'
-)
-print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
-
-```
-
-`Inference: Apple has reduced the amount spent in Ops which is a good thing, indicating that a lot of automation is happening inside the company to reduce this cost. Apple has varied it's amount of investing in other avenues. Apple also earns a tiny amount from a lot of it's patents as shown in the last column.`
-
-
-Visualizing Balance Sheet!
-========================================================
-
-This dataset highlights core components of Balance sheet of Apple
-```{r}
-
-aaplBalanceSheet_simple<- expose( aaplBalanceSheet,
-# Assets
-`Current Assets` = "AssetsCurrent",
-`Noncurrent Assets` = other("Assets"),
-# Liabilites and equity
-`Current Liabilities` = "LiabilitiesCurrent",
-`Noncurrent Liabilities` = other(c("Liabilities", "CommitmentsAndContingencies")),
-`Stockholders Equity` = "StockholdersEquity"
-)
-
-print(aaplBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
-
-```
-
-Visualizing in detail
-========================================================
-
-```{r}
-plot_double_stacked_bar(aaplBalanceSheet_simple)
-plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
-
-```
-
-
