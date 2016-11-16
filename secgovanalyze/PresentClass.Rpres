@@ -18,8 +18,7 @@ List of Companies
 Setting up things
 ========================================================
 
-
-```r
+```{r}
 # To parse XML documents
 library(XBRL)
 old_o <- options(stringsAsFactors = FALSE)
@@ -30,16 +29,19 @@ library(ggplot2)
 library(finstr)
 # Data munging
 library(dplyr)
+
+# Setting Workspace
+setwd("~/Work/BigDataAssignments/secgovanalyze")
 ```
 
 Getting data
 ========================================================
 
-
-```r
+```{r}
 #FB forms
 fb_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2015/fb-20141231.xml'
 fb_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2016/fb-20151231.xml'
+
 
 #PEPSI forms
 pep_url2015 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/pep/2015/pep-20141227.xml'
@@ -56,4 +58,5 @@ aapl_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/m
 #GM forms
 gm_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/GM/2015/gm-20141231.xml'
 gm_url2016 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/GM/2016/gm-20151231.xml'
+
 ```
