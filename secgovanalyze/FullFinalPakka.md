@@ -22,7 +22,6 @@ Setting up things
 ```r
 # To parse XML documents
 library(XBRL)
-old_o <- options(stringsAsFactors = FALSE)
 # To visualize results
 library(plotly)
 library(ggplot2)
@@ -43,6 +42,7 @@ Analyzing Amazon
 #AMZN forms
 amzn_url2015<-'http://localhost:8000/amzn/2015/amzn-20141231.xml'
 amzn_url2016<- 'http://localhost:8000/amzn/2016/amzn-20151231.xml'
+old_o <- options(stringsAsFactors = FALSE)
 amzn_2015 <- xbrlDoAll(amzn_url2015)
 amzn_2016 <- xbrlDoAll(amzn_url2016)
 options(old_o)
@@ -308,5 +308,269 @@ plot_double_stacked_bar(proportional(amznBalanceSheet_simple))
 ![plot of chunk unnamed-chunk-8](FullFinalPakka-figure/unnamed-chunk-8-2.png)
 
 
-$AAPL
+Analyzing Apple
 ========================================================
+
+
+```r
+#AMZN forms
+aapl_url2015<-'http://localhost:8000/aapl/2015/aapl-20140927.xml'
+aapl_url2016<- 'http://localhost:8000/aapl/2016/aapl-20150926.xml'
+old_o <- options(stringsAsFactors = FALSE)
+aapl_2015 <- xbrlDoAll(aapl_url2015)
+aapl_2016 <- xbrlDoAll(aapl_url2016)
+options(old_o)
+aapl2015 <- xbrl_get_statements(aapl_2015)
+aapl2016 <- xbrl_get_statements(aapl_2016)
+```
+
+Apple 10K in 2015
+========================================================
+
+![picture of spaghetti](aapl/aapl2015.png)
+
+## Apple 10K in 2016
+
+![picture of spaghetti](aapl/aapl2016.png)
+
+Merge the result!
+========================================================
+
+
+```r
+aapl <- merge(aapl2015,aapl2016)
+aaplBalanceSheet <- merge(aapl2015$StatementOfFinancialPositionClassified,aapl2016$StatementOfFinancialPositionClassified)
+aaplCashFlow <- merge(aapl2015$StatementOfCashFlowsIndirect,aapl2016$StatementOfCashFlowsIndirect)
+```
+![picture of spaghetti](aapl/aaplbs.png)
+
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
+
+```r
+aaplBalanceSheet %>% transmute(
+date = endDate,
+CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
+```
+
+```
+        date CurrentRatio
+1 2013-09-28     1.678639
+2 2014-09-27     1.080113
+3 2015-09-26     1.108771
+```
+
+`Inference : Apple consistently had a ratio of 1.0 or greater which indicates that Apple possesed more assets than liablities, which is a good sign for company's growth.`
+
+Visualize Profit and Loss!
+========================================================
+Consolidated Statement of Income.
+
+This dataset highlights the gross profit and operating expenses at Apple.
+
+
+```r
+aaplIncome <- expose( aapl$StatementOfIncome,
+`Op Exp` = 'OperatingIncomeLoss',
+`Non Ops Exp` = 'NonoperatingIncomeExpense'
+)
+
+print(aaplIncome, html = TRUE, big.mark = ",", dateFormat = "%Y")
+```
+
+<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: left;'><strong>Net Income (Loss) Attributable to Parent</strong></td>
+<td style='text-align: right;'><strong> 53,394</strong></td>
+<td style='text-align: right;'><strong> 39,510</strong></td>
+<td style='text-align: right;'><strong> 37,037</strong></td>
+<td style='text-align: right;'><strong> 41,733</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Op Exp</td>
+<td style='text-align: right;'> 71,230</td>
+<td style='text-align: right;'> 52,503</td>
+<td style='text-align: right;'> 48,999</td>
+<td style='text-align: right;'> 55,241</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Non Ops Exp</td>
+<td style='text-align: right;'>  1,285</td>
+<td style='text-align: right;'>    980</td>
+<td style='text-align: right;'>  1,156</td>
+<td style='text-align: right;'>    522</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;OtherNetIncomeLoss_</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-19,121</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-13,973</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-13,118</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-14,030</td>
+</tr>
+</tbody>
+</table>
+
+`Inference: Apple as a company is increasing the net income while also increasing gross expenditure`
+
+Visualizing Cash Flow!
+========================================================
+This dataset highlights how the money is used in Amazon.
+
+
+```r
+aaplCashflow_simple <- expose( aaplCashFlow,
+`Ops Activities` = 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations',
+`Investing` = 'NetCashProvidedByUsedInInvestingActivitiesContinuingOperations',
+`Financing` = 'NetCashProvidedByUsedInFinancingActivitiesContinuingOperations'
+)
+print(aaplCashflow_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+```
+
+<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2012</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: left;'><strong>Cash and Cash Equivalents, Period Increase (Decrease)</strong></td>
+<td style='text-align: right;'><strong>  7,276</strong></td>
+<td style='text-align: right;'><strong>   -415</strong></td>
+<td style='text-align: right;'><strong>  3,513</strong></td>
+<td style='text-align: right;'><strong>    931</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Ops Activities</td>
+<td style='text-align: right;'>-25,522</td>
+<td style='text-align: right;'>-19,307</td>
+<td style='text-align: right;'>-20,408</td>
+<td style='text-align: right;'>-32,610</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Investing</td>
+<td style='text-align: right;'>-56,274</td>
+<td style='text-align: right;'>-22,579</td>
+<td style='text-align: right;'>-33,774</td>
+<td style='text-align: right;'>-48,227</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;Financing</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-17,716</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-37,549</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>-16,379</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'> -1,698</td>
+</tr>
+</tbody>
+</table>
+
+`Inference: Apple has reduced the amount spent in Ops which is a good thing, indicating that a lot of automation is happening inside the company to reduce this cost. Apple has varied it's amount of investing in other avenues. Apple also earns a tiny amount from a lot of it's patents as shown in the last column.`
+
+
+Visualizing Balance Sheet!
+========================================================
+
+This dataset highlights core components of Balance sheet of Apple
+
+```r
+aaplBalanceSheet_simple<- expose( aaplBalanceSheet,
+# Assets
+`Current Assets` = "AssetsCurrent",
+`Noncurrent Assets` = other("Assets"),
+# Liabilites and equity
+`Current Liabilities` = "LiabilitiesCurrent",
+`Noncurrent Liabilities` = other(c("Liabilities", "CommitmentsAndContingencies")),
+`Stockholders Equity` = "StockholdersEquity"
+)
+
+print(aaplBalanceSheet_simple, html = TRUE, big.mark = ",", dateFormat = "%Y")
+```
+
+<table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<thead>
+<tr>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2015</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2014</th>
+<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>2013</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align: left;'><strong>Assets</strong></td>
+<td style='text-align: right;'><strong>290,479</strong></td>
+<td style='text-align: right;'><strong>231,839</strong></td>
+<td style='text-align: right;'><strong>207,000</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Assets</td>
+<td style='text-align: right;'> 89,378</td>
+<td style='text-align: right;'> 68,531</td>
+<td style='text-align: right;'> 73,286</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Assets</td>
+<td style='text-align: right;'>201,101</td>
+<td style='text-align: right;'>163,308</td>
+<td style='text-align: right;'>133,714</td>
+</tr>
+<tr>
+<td style='text-align: left;'><strong>Liabilities and Equity</strong></td>
+<td style='text-align: right;'><strong>290,479</strong></td>
+<td style='text-align: right;'><strong>231,839</strong></td>
+<td style='text-align: right;'><strong>207,000</strong></td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Current Liabilities</td>
+<td style='text-align: right;'> 80,610</td>
+<td style='text-align: right;'> 63,448</td>
+<td style='text-align: right;'> 43,658</td>
+</tr>
+<tr>
+<td style='text-align: left;'>&nbsp;&nbsp;&nbsp;Noncurrent Liabilities</td>
+<td style='text-align: right;'> 90,514</td>
+<td style='text-align: right;'> 56,844</td>
+<td style='text-align: right;'> 39,793</td>
+</tr>
+<tr>
+<td style='border-bottom: 2px solid grey; text-align: left;'>&nbsp;&nbsp;&nbsp;Stockholders Equity</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>119,355</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>111,547</td>
+<td style='border-bottom: 2px solid grey; text-align: right;'>123,549</td>
+</tr>
+</tbody>
+</table>
+
+Visualizing in detail
+========================================================
+
+
+```r
+plot_double_stacked_bar(aaplBalanceSheet_simple)
+```
+
+![plot of chunk unnamed-chunk-15](FullFinalPakka-figure/unnamed-chunk-15-1.png)
+
+```r
+plot_double_stacked_bar(proportional(aaplBalanceSheet_simple))
+```
+
+![plot of chunk unnamed-chunk-15](FullFinalPakka-figure/unnamed-chunk-15-2.png)
