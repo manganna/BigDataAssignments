@@ -470,4 +470,19 @@ plot_double_stacked_bar(proportional(nflxBalanceSheet_simple))
 
 ```
 
+Analyzing Walmart
+========================================================
+
+```{r}
+#WMT forms
+wmt_url2015<-'http://localhost:8000/wmt/2015/wmt-20140131.xml'
+wmt_url2016<- 'http://localhost:8000/wmt/2016/wmt-20150131.xml'
+old_o <- options(stringsAsFactors = FALSE)
+wmt_2015 <- xbrlDoAll(wmt_url2015)
+wmt_2016 <- xbrlDoAll(wmt_url2016)
+options(old_o)
+wmt2015 <- xbrl_get_statements(wmt_2015)
+wmt2016 <- xbrl_get_statements(wmt_2016)
+
+```
 
