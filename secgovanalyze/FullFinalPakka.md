@@ -30,6 +30,7 @@ library(ggplot2)
 library(finstr)
 # Data munging
 library(dplyr)
+setwd("~/Work/BigDataAssignments/secgovanalyze")
 ```
 
 Analyzing Amazon
@@ -47,44 +48,48 @@ amzn2015 <- xbrl_get_statements(amzn_2015)
 amzn2016 <- xbrl_get_statements(amzn_2016)
 ```
 
+Amazon 10K in 2015
+========================================================
+
+![picture of spaghetti](amzn/amzn2015.png)
+
+## Amazon 10K in 2016
+
+![picture of spaghetti](amzn/amzn2016.png)
+
+Merge the result!
+========================================================
+
 
 ```r
-# Amazon 10K filed in 2015 
-amzn2015
+amzn <- merge(amzn2015,amzn2016)
+amznIncome <- merge(amzn2015$ConsolidatedStatementsOfComprehensiveIncome, amzn2016$ConsolidatedStatementsOfComprehensiveIncome)
+amznSOP <- merge(amzn2015$ConsolidatedStatementsOfOperations,amzn2016$ConsolidatedStatementsOfOperations)
+amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
 ```
+![picture of spaghetti](amzn/amazonbs.png)
 
-```
-Financial statements repository
-                                                  From         To Rows
-ConsolidatedBalanceSheets                   2013-12-31 2014-12-31    2
-ConsolidatedStatementsOfCashFlows           2012-12-31 2014-12-31    3
-ConsolidatedStatementsOfComprehensiveIncome 2012-12-31 2014-12-31    3
-ConsolidatedStatementsOfOperations          2012-12-31 2014-12-31    3
-                                            Columns
-ConsolidatedBalanceSheets                        28
-ConsolidatedStatementsOfCashFlows                33
-ConsolidatedStatementsOfComprehensiveIncome      11
-ConsolidatedStatementsOfOperations               23
-```
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
 
 ```r
-# Amazon 10K filed in 2016
-amzn2016
+amznBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
 ```
 
 ```
-Financial statements repository
-                                                  From         To Rows
-ConsolidatedBalanceSheets                   2014-12-31 2015-12-31    2
-ConsolidatedStatementsOfCashFlows           2013-12-31 2015-12-31    3
-ConsolidatedStatementsOfComprehensiveIncome 2013-12-31 2015-12-31    3
-ConsolidatedStatementsOfOperations          2013-12-31 2015-12-31    3
-                                            Columns
-ConsolidatedBalanceSheets                        28
-ConsolidatedStatementsOfCashFlows                32
-ConsolidatedStatementsOfComprehensiveIncome      11
-ConsolidatedStatementsOfOperations               23
+        date CurrentRatio
+1 2013-12-31     1.071584
+2 2014-12-31     1.115276
+3 2015-12-31     1.075961
 ```
 
-Slide With Plot
+`Inference : Amazon consistently had a ratio of 1.0 or greater which indicates that Amazon possesed more assets than liablities, which is a good sign for company's growth.`
+
+Visualize the result!
 ========================================================

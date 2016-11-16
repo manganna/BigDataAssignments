@@ -29,6 +29,8 @@ library(ggplot2)
 library(finstr)
 # Data munging
 library(dplyr)
+setwd("~/Work/BigDataAssignments/secgovanalyze")
+
 ```
 
 Analyzing Amazon
@@ -46,14 +48,41 @@ amzn2016 <- xbrl_get_statements(amzn_2016)
 
 ```
 
-```{r}
-# Amazon 10K filed in 2015 
-amzn2015
+Amazon 10K in 2015
+========================================================
 
-# Amazon 10K filed in 2016
-amzn2016
+![picture of spaghetti](amzn/amzn2015.png)
+
+## Amazon 10K in 2016
+
+![picture of spaghetti](amzn/amzn2016.png)
+
+Merge the result!
+========================================================
+
+```{r}
+amzn <- merge(amzn2015,amzn2016)
+amznIncome <- merge(amzn2015$ConsolidatedStatementsOfComprehensiveIncome, amzn2016$ConsolidatedStatementsOfComprehensiveIncome)
+amznSOP <- merge(amzn2015$ConsolidatedStatementsOfOperations,amzn2016$ConsolidatedStatementsOfOperations)
+amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
+
+```
+![picture of spaghetti](amzn/amazonbs.png)
+
+Financial ratios!
+========================================================
+It's the ratio of current assests / current liabilities.  
+
+
+```{r}
+amznBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
 
 ```
 
-Slide With Plot
+`Inference : Amazon consistently had a ratio of 1.0 or greater which indicates that Amazon possesed more assets than liablities, which is a good sign for company's growth.`
+
+Visualize the result!
 ========================================================
