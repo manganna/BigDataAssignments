@@ -39,7 +39,7 @@ Getting data
 fb_url2015 <-'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2015/fb-20141231.xml'
 fb_url2016 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/fb/2016/fb-20151231.xml'
 fb_2015 <- xbrlDoAll(fb_url2015)
-fb_2015 <- xbrlDoAll(fb_url2015)
+fb_2016 <- xbrlDoAll(fb_url2016)
 
 #PEPSI forms
 pep_url2015 <- 'https://raw.githubusercontent.com/mr-karan/BigDataAssignments/master/secgovanalyze/pep/2015/pep-20141227.xml'
@@ -74,4 +74,10 @@ Analyzing Amazon
 
 amzn2015 <- xbrl_get_statements(amzn_2015)
 amzn2016 <- xbrl_get_statements(amzn_2016)
+amznBalanceSheet<- merge(amzn2015$ConsolidatedBalanceSheets,amzn2016$ConsolidatedBalanceSheets)
+amznBalanceSheet %>% transmute(
+  date = endDate, 
+  CurrentRatio = AssetsCurrent / LiabilitiesCurrent
+)
+
 ```
