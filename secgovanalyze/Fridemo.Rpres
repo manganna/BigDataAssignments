@@ -5,7 +5,7 @@
 </style>
 Company Balance Sheet Analysis
 ========================================================
-author: Karan Sharma
+author: Group 12
 date: 15th November 2016
 autosize: true
 
@@ -564,13 +564,12 @@ wmt2016 <- xbrl_get_statements(wmt_2016)
 
 ```
 
-Netflix 10K in 2015
+Walmart 10K in 2015
 ========================================================
 
 ![picture of spaghetti](wmt/wmt2015.png)
 
-## Netflix 10K in 2016
-
+## Walmart 10K in 2016
 ![picture of spaghetti](wmt/wmt2016.png)
 
 Merge the result!
@@ -607,7 +606,7 @@ Visualizing Cash Flow!
 ========================================================
 class: small-code
 
-This dataset highlights how the money is used in Netflix.
+This dataset highlights how the money is used in Walmart.
 
 ```{r}
 wmtCashflow_simple <- expose( wmtCashFlow,
