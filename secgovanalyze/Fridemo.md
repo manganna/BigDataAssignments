@@ -18,7 +18,7 @@ List of Companies
 - $AAPL (Apple)
 - $PEP (Pepsi)
 - $NFLX (Netflix)
-
+- $WMT (Walmart)
 Setting up things
 ========================================================
 class: small-code
