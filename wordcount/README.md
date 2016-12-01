@@ -8,6 +8,10 @@
 
 `brew install hadoop`
 
+### SSH Localhost
+
+```ssh localhost```
+
 ### Text Data
 
 Download from free `Project Gutenberg`
@@ -48,4 +52,4 @@ bin/hadoop dfs -cat gutenberg-output/part-r-00000 >> result.txt
 open result.txt
 ```
 
-![](screenshot/hadoop.png)
+![](http://i.imgur.com/WrPTCJW.png)
