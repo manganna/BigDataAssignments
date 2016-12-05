@@ -6,6 +6,7 @@ import sys
 from threading import Thread
 
 def reduce():
+    result ={}
     current_word = None
     current_count = 0
     word = None
@@ -37,9 +38,13 @@ def reduce():
             current_count = count
             current_word = word
 
+        result[current_word] = current_count
+
     # do not forget to output the last word if needed!
     if current_word == word:
         print  ('%s\t%s' % (current_word, current_count))
+
+    print(result)
 
 if __name__ == '__main__':
     thread = Thread(target=reduce)

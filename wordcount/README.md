@@ -53,3 +53,25 @@ open result.txt
 ```
 
 ![](http://i.imgur.com/WrPTCJW.png)
+
+##### donquixote
+![](images/donPie.png )
+
+##### Franz Kafka 
+
+![](images/KafkaBar.png)
+
+##### Jane Eyre
+![](images/janeBar.png)
+
+![](images/janePie.png)
+
+##### Pride and Prejudice
+![](images/prideBar.png)
+
+![](images/pridePie.png)
+
+##### Works of Shakespeare 
+![](images/shakeBar.png )
+
+![](images/shakePie.png)
