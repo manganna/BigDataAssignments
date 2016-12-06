@@ -57,12 +57,18 @@ open result.txt
 ##### donquixote
 ![](images/donPie.png )
 
+![](images/drop.png )
+
 ##### Franz Kafka 
 
 ![](images/KafkaBar.png)
 
+![](images/kafka.png )
+
 ##### Jane Eyre
 ![](images/janeBar.png)
+
+![](images/jane.png )
 
 ![](images/janePie.png)
 
