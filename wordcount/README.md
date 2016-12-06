@@ -15,6 +15,11 @@
 ### Text Data
 
 Download from free `Project Gutenberg`
+- Franz Kafka : 139054 characters (141 KB)
+- Don Quixote : 2307785 characters (2.9 MB)
+- Shakespeare : 1783704 characters (1.8 MB)
+- Jane Eyre : 1049265 characters (1.1 MB)
+- Pride and Prejudice :  704191 (728 KB)
 
 ### Executable Python Scripts
 
